@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>СНХК Админка</title>
+
+    <link rel="stylesheet" href="./css/daterangepicker.css">
+    <link rel="stylesheet" href="./css/daterangepicker-kv.css">
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="navbar-aside">
+                <button type="button" class="btn-aside-menu toggle-sidebar">
+                </button>
+            </div>
+            <div class="navbar-user">
+                <div class="user">
+                    <div class="user-wrapper show-user-dropdown">
+                        <div class="icon-user" style="background-image: url(./../img/user.png);"></div>
+                        <div class="user-name">Ramon Ridwan</div>
+                    </div>
+                    <div class="dropdown-user">
+                        <ul>
+                            <li>
+                                <a href="#" class="logout">Выход </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="notification">
+                    <a href="#">
+                        <div class="icon-notification"></div>
+                        <div class="new-notification">1</div>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="sidebar">
+            <div class="menu-sidebar">
+                <div class="logo">
+                    <a href="#">
+                        <img src="./img/logo.png" alt="СНХК">
+                    </a>
+                </div>
+                <div class="menu">
+                    <nav>
+                        <ul class="sidebar-nav">
+                            <li>
+                                <a href="#" class="active">
+                                    <div class="icon-charts"></div>
+                                    Ключевые показатели
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+        <div class="content">
+            <div class="breadcrumps">
+                <ul>
+                    <li>
+                        <a href="#">
+                            <span>Главная</span>
+                        </a>
+                    </li>
+                    <li>
+                        /
+                        Ключевые показатели
+                    </li>
+                </ul>
+            </div>
+            <div class="page-content">
+                <form id="selector-filter" method="post" data-pjax="1">
+                    <div class="filter-wrapper">
+                        <div class="box">
+                            <h6>Площадка отгрузки </h6>
+                            <div class="form-group field-filter-item">
+                                <select class="form-control input-sm">
+                                    <option value="">Все</option>
+                                    <option value="1">Площадка отгрузки 1</option>
+                                    <option value="2">Площадка отгрузки 2</option>
+                                </select>
+                                <div class="select-caret"></div>
+                            </div>
+                        </div>
+
+                        <div class="box">
+                            <h6>Контрагент </h6>
+                            <div class="form-group field-filter-item">
+                                <select class="form-control input-sm">
+                                    <option value="">Контрагент</option>
+                                    <option value="1">Контрагент 1</option>
+                                    <option value="2">Контрагент 2</option>
+                                    <option value="3">Контрагент 3</option>
+                                </select>
+                                <div class="select-caret"></div>
+                            </div>
+                        </div>
+
+                        <div class="box">
+                            <h6>Рынок </h6>
+                            <div class="form-group field-filter-item">
+                                <select class="form-control input-sm">
+                                    <option value="">Все</option>
+                                    <option value="3">Рынок 1</option>
+                                    <option value="4">Рынок 2</option>
+                                    <option value="5">Рынок 3</option>
+                                </select>
+                                <div class="select-caret"></div>
+                            </div>
+                        </div>
+                        <div class="box">
+                            <h6>Период</h6>
+                            <div class="drp-container form-group field-filter-date drp-container-selectdata">
+                                <input type="text" id="filter-date" class="form-control" value="">
+                                <div class="select-caret"></div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-primary" style="visibility: hidden">Подобрать</button>
+                        </div>
+                    </div>
+                </form>
+                <div class="charts-content">
+                    <div class="chart-row">
+                        <div class="chart-box">
+                            <div class="chart-header">На каких заводах производится продукция, которую<br>
+                                Вы покупаете у компании СНХК?</div>
+                            <div class="chart-block">
+                                <div class="doughnutchart">
+                                    <div id="ManufactoryDoughnatChart" class="chart"></div>
+                                </div>
+                                <div class="doughnutlegend"></div>
+                            </div>
+                        </div>
+                        <div class="chart-box">
+                            <div class="chart-header">Какое место в структуре Ваших поставщиков по качеству<br>
+                                продукции занимает компания СНХК?</div>
+                            <div class="chart-block">
+                                <div class="doughnutchart">
+                                    <div id="PlaceDoughnatChart" class="chart"></div>
+                                </div>
+                                <div class="doughnutlegend"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="chart-row">
+                        <div class="chart-box">
+                            <div class="chart-header">
+                                Насколько Вы в целом удовлетворены командой сотрудников,<br>
+                                 взаимодействующих с Вами?
+                            </div>
+                            <div class="chart-block">
+                                <div class="table-chart">
+                                    <div class="table-item">
+                                        <div class="info-row">
+                                            <div class="stars">
+                                                <div class="icon-star"></div>
+                                            </div>
+                                            <div class="percent">25%</div>
+                                        </div>
+                                        <div class="line-row">
+                                            <div class="grey-row"></div>
+                                            <div class="active-row colorblue1" style="width: 25%;"></div>
+                                        </div>
+                                    </div>
+                                    <div class="table-item">
+                                        <div class="info-row">
+                                            <div class="stars">
+                                                <div class="icon-star"></div>
+                                                <div class="icon-star"></div>
+                                            </div>
+                                            <div class="percent">35%</div>
+                                        </div>
+                                        <div class="line-row">
+                                            <div class="grey-row"></div>
+                                            <div class="active-row colorblue2" style="width: 35%;"></div>
+                                        </div>
+                                    </div>
+                                    <div class="table-item">
+                                        <div class="info-row">
+                                            <div class="stars">
+                                                <div class="icon-star"></div>
+                                                <div class="icon-star"></div>
+                                                <div class="icon-star"></div>
+                                            </div>
+                                            <div class="percent">15%</div>
+                                        </div>
+                                        <div class="line-row">
+                                            <div class="grey-row"></div>
+                                            <div class="active-row colorblue3" style="width: 15%;"></div>
+                                        </div>
+                                    </div>
+                                    <div class="table-item">
+                                        <div class="info-row">
+                                            <div class="stars">
+                                                <div class="icon-star"></div>
+                                                <div class="icon-star"></div>
+                                                <div class="icon-star"></div>
+                                                <div class="icon-star"></div>
+                                            </div>
+                                            <div class="percent">65%</div>
+                                        </div>
+                                        <div class="line-row">
+                                            <div class="grey-row"></div>
+                                            <div class="active-row colorblue5" style="width: 65%;"></div>
+                                        </div>
+                                    </div>
+                                    <div class="table-item">
+                                        <div class="info-row">
+                                            <div class="stars">
+                                                <div class="icon-star"></div>
+                                                <div class="icon-star"></div>
+                                                <div class="icon-star"></div>
+                                                <div class="icon-star"></div>
+                                                <div class="icon-star"></div>
+                                            </div>
+                                            <div class="percent">15%</div>
+                                        </div>
+                                        <div class="line-row">
+                                            <div class="grey-row"></div>
+                                            <div class="active-row colorblue5" style="width: 15%;"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="chart-box">
+                            <div class="chart-header">Насколько Вы удовлетворены следующими отдельными<br>
+                                параметрами команды сотрудников СНХК, взаимодействующих с Вами?</div>
+                            <div class="chart-block">
+                                <div class="linechart">
+                                    <div style="position: relative; height:100%; width:100%">
+                                        <canvas id="teamChart" style="width: 500px; height: 200px;"></canvas>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="chart-row">
+                        <div class="chart-box">
+                            <div class="chart-header">
+                                Насколько Вы в целом удовлетворены логистикой<br>
+                                 и поставками компании СНХК?
+                            </div>
+                            <div class="chart-block">
+                                <div class="table-chart">
+                                    <div class="table-item">
+                                        <div class="info-row">
+                                            <div class="stars">
+                                                <div class="icon-star"></div>
+                                            </div>
+                                            <div class="percent">25%</div>
+                                        </div>
+                                        <div class="line-row">
+                                            <div class="grey-row"></div>
+                                            <div class="active-row colorgreen1" style="width: 25%;"></div>
+                                        </div>
+                                    </div>
+                                    <div class="table-item">
+                                        <div class="info-row">
+                                            <div class="stars">
+                                                <div class="icon-star"></div>
+                                                <div class="icon-star"></div>
+                                            </div>
+                                            <div class="percent">35%</div>
+                                        </div>
+                                        <div class="line-row">
+                                            <div class="grey-row"></div>
+                                            <div class="active-row colorgreen2" style="width: 35%;"></div>
+                                        </div>
+                                    </div>
+                                    <div class="table-item">
+                                        <div class="info-row">
+                                            <div class="stars">
+                                                <div class="icon-star"></div>
+                                                <div class="icon-star"></div>
+                                                <div class="icon-star"></div>
+                                            </div>
+                                            <div class="percent">15%</div>
+                                        </div>
+                                        <div class="line-row">
+                                            <div class="grey-row"></div>
+                                            <div class="active-row colorgreen3" style="width: 15%;"></div>
+                                        </div>
+                                    </div>
+                                    <div class="table-item">
+                                        <div class="info-row">
+                                            <div class="stars">
+                                                <div class="icon-star"></div>
+                                                <div class="icon-star"></div>
+                                                <div class="icon-star"></div>
+                                                <div class="icon-star"></div>
+                                            </div>
+                                            <div class="percent">65%</div>
+                                        </div>
+                                        <div class="line-row">
+                                            <div class="grey-row"></div>
+                                            <div class="active-row colorgreen4" style="width: 65%;"></div>
+                                        </div>
+                                    </div>
+                                    <div class="table-item">
+                                        <div class="info-row">
+                                            <div class="stars">
+                                                <div class="icon-star"></div>
+                                                <div class="icon-star"></div>
+                                                <div class="icon-star"></div>
+                                                <div class="icon-star"></div>
+                                                <div class="icon-star"></div>
+                                            </div>
+                                            <div class="percent">15%</div>
+                                        </div>
+                                        <div class="line-row">
+                                            <div class="grey-row"></div>
+                                            <div class="active-row colorgreen5" style="width: 15%;"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="chart-box">
+                            <div class="chart-header">Насколько Вы удовлетворены следующими отдельными <br>
+                                параметрами логистики и поставок бутилакрилата?</div>
+                            <div class="chart-block">
+                                <div class="linechart">
+                                    <div style="position: relative; height:100%; width:100%">
+                                        <canvas id="logisticsChart" style="width: 500px; height: 200px;"></canvas>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="chart-box full-width">
+                        <div class="chart-header">
+                            Насколько Вы удовлетворены следующими отдельными параметрами технической поддержки компании СНХК 
+                        </div>
+                        <div class="chart-block">
+                            <div class="linechart minwidth700">
+                                <div style="position: relative; height:100%; width:100%">
+                                    <canvas id="supportChart" style="width: 500px; height: 200px;"></canvas>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="chart-box full-width">
+                        <div class="chart-header">
+                            Насколько Вы удовлетворены следующими отдельными параметрами документооборота с компанией СНХК?
+                        </div>
+                        <div class="chart-block">
+                            <div class="linechart minwidth500">
+                                <div style="position: relative; height:100%; width:100%">
+                                    <canvas id="documentChart" style="width: 500px; height: 200px;"></canvas>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="scrollup">
+            <a href="#" class="text-white"><i class="fa fa-chevron-up"></i></a>
+        </div>
+    </div>
+
+    <script src="./js/jquery-3.5.1.min.js"></script>
+    <script src="./js/moment.js"></script>
+    <script src="./js/daterangepicker.js"></script>
+    <script src="./js/jquery.drawDoughnutChart.js"></script>
+    <script src="./js/Chart.min.js"></script>
+    <script src="./js/script.js"></script>
+    <script>
+        var dataManufactory = [
+            {
+                title: "СИБУР Нефтехим",
+                value: 30,
+                color: "#B2DD6A"
+            },
+            {
+                title: "Акрил Салават",
+                value: 50,
+                color: "#74CE9E"
+            },
+            {
+                title: "Не знаю/ затрудняюсь ответить",
+                value: 30,
+                color: "#94D587"
+            }
+        ];
+        var dataPlace = [
+            {
+                title: "Первое место",
+                value: 30,
+                color: "#11CAE3"
+            },
+            {
+                title: "В первой тройке",
+                value: 20,
+                color: "#74CE9E"
+            },
+            {
+                title: "В пятерке",
+                value: 50,
+                color: "#08B3BB"
+            },
+            {
+                title: "Другое",
+                value: 10,
+                color: "#94D587"
+            }
+        ];
+        var teamDataLabels = [[['Скорость принятия'], ['решений']], [['Качество обратной'], [' связи']], [['Скорость  принятия'], ['решений']]];
+        var teamDataRatings = [5, 3.5, 4.7];
+        var teamDataCount = [10, 20, 40];
+
+        var logisticDataLabels = [[['Качество'], ['подвижного состава']], [['Качество маркировки (нанесение'], [' знаков опасности, трафаретов)']]];
+        var logisticDataRatings = [5, 3.2];
+        var logisticDataCount = [40, 20];
+
+        var supportDataLabels = [
+            [['Своевременность'], ['погрузки']],
+            [['Качество отгрузки, а'], [' именно соотвествие'], [' качества']],
+            [['Качество оформления'],['транспортных документов']],
+            [['Скорость оформления'],['транспортных документов']],
+            [['Скорость оформления'],['транспортных документов']],
+            [['Качество упаковки /'],['качество подвижного'], ['состава']],
+            [['Качество маркировки']]
+        ];
+        var supportDataRatings = [5, 3.2, 4, 3.7, 4.8, 2.8, 4.7];
+        var supportDataCount = [40, 20, 30, 40, 80, 70, 10];
+
+        var documentDataLabels = [
+            [['Процесс заключения договоров '], ['(дополнительных соглашений)']],
+            [['Работа СИБУР-ЦОБ (Нижний Новгород) по'], [' предоставлению договорных документов, счетов-фактур,'], [' товарных накладных ТОРГ-12 и актов сверки'], ['взаиморасчетов']],
+            [['Выставление инвойсов от СНХК']]
+        ];
+        var documentDataRatings = [5, 3.2, 4];
+        var documentDataCount = [40, 20, 30];
+
+           
+    </script>
+    <script>
+        jQuery(function ($) {
+            $(document).ready(function () {
+                $('.field-filter-date input').daterangepicker({
+                    opens: 'rigth',
+                    locale: {
+                        format: 'DD-MM-YYYY',
+                        applyLabel: 'Принять',
+                        cancelLabel: 'Отмена',
+                        invalidDateLabel: 'Выберите дату',
+                        daysOfWeek: ['Вт', 'Ср', 'Чт', 'Пт', 'Сб', 'Вс', 'Пн'],
+                        monthNames: ['Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь', 'Июль', 'Август', 'Сентябрь', 'Октябрь', 'Ноябрь', 'Декабрь'],
+                        firstDay: 1
+                    }
+                }, function (start, end, label) {
+                });
+            });
+        });
+    </script>
+    <script src="./js/linechartscript.js"></script>
+    <script src="./js/doughnatscript.js"></script>
+</body>
+
+</html>
