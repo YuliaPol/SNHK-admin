@@ -56,10 +56,10 @@ body {
 }
 
 .container .header {
-  margin-left: 160px;
+  margin-left: 260px;
   background-color: #ffffff;
   height: 70px;
-  width: calc(100% - 160px);
+  width: calc(100% - 260px);
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -282,7 +282,7 @@ body {
   top: 0px;
   bottom: 0px;
   left: 0px;
-  width: 160px;
+  width: 260px;
   -webkit-box-shadow: 0px 0px 15px 5px rgba(0, 0, 0, 0.2);
           box-shadow: 0px 0px 15px 5px rgba(0, 0, 0, 0.2);
   -webkit-transition: left 0.3s ease;
@@ -348,8 +348,8 @@ body {
   font-family: "FreeSetCTT";
   font-style: normal;
   font-weight: normal;
-  font-size: 10px;
-  line-height: 11px;
+  font-size: 14px;
+  line-height: 16px;
   text-align: center;
   color: #565252;
   text-decoration: none;
@@ -434,8 +434,8 @@ body {
   font-family: "FreeSetCTT";
   font-style: normal;
   font-weight: normal;
-  font-size: 10px;
-  line-height: 11px;
+  font-size: 12px;
+  line-height: 14px;
   color: #797777;
   margin-bottom: 2px !important;
   border-bottom: 1px solid #BEBEBE;
@@ -451,8 +451,8 @@ body {
   font-family: "FreeSetCTT";
   font-style: normal;
   font-weight: normal;
-  font-size: 10px;
-  line-height: 11px;
+  font-size: 12px;
+  line-height: 14px;
   color: #383232;
   outline: none;
   -webkit-box-shadow: none;
@@ -546,8 +546,8 @@ body {
   font-family: "FreeSetCTT";
   font-style: normal;
   font-weight: normal;
-  font-size: 12px;
-  line-height: 14px;
+  font-size: 14px;
+  line-height: 16px;
   text-align: center;
   color: #000000;
 }
@@ -556,8 +556,8 @@ body {
   font-family: "FreeSetCTT";
   font-style: normal;
   font-weight: normal;
-  font-size: 12px;
-  line-height: 14px;
+  font-size: 14px;
+  line-height: 16px;
   text-align: center;
   color: #000000;
   text-decoration: none;
@@ -565,9 +565,9 @@ body {
 }
 
 .content {
-  width: calc(100% - 160px);
+  width: calc(100% - 260px);
   min-height: calc(100vh - 70px);
-  margin-left: 160px;
+  margin-left: 260px;
   -webkit-transition: all 0.3s;
   -o-transition: all 0.3s;
   transition: all 0.3s;
@@ -600,8 +600,8 @@ body {
   font-family: "FreeSetCTT";
   font-style: normal;
   font-weight: normal;
-  font-size: 10px;
-  line-height: 11px;
+  font-size: 12px;
+  line-height: 14px;
 }
 
 .daterangepicker .drp-buttons .btn:hover {
@@ -614,8 +614,8 @@ body {
   font-family: "FreeSetCTT";
   font-style: normal;
   font-weight: normal;
-  font-size: 10px;
-  line-height: 11px;
+  font-size: 12px;
+  line-height: 14px;
 }
 
 .daterangepicker .calendar-table td.active,
@@ -630,8 +630,8 @@ body {
   font-family: "FreeSetCTT";
   font-style: normal;
   font-weight: normal;
-  font-size: 10px;
-  line-height: 11px;
+  font-size: 12px;
+  line-height: 14px;
 }
 
 .charts-content {
@@ -675,8 +675,8 @@ body {
   font-family: "FreeSetCTT";
   font-style: normal;
   font-weight: normal;
-  font-size: 12px;
-  line-height: 14px;
+  font-size: 16px;
+  line-height: 18px;
   color: #000000;
   padding-bottom: 15px;
 }
@@ -718,10 +718,10 @@ body {
 
 .charts-content .chart-box .table-chart .table-item .line-row .active-row {
   border-radius: 5px;
-  height: 5px;
+  height: 7px;
   position: absolute;
-  top: 0px;
-  bottom: 0px;
+  top: -1px;
+  bottom: -1px;
   left: 0px;
   background: #ffffff;
   -webkit-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
@@ -772,8 +772,8 @@ body {
   font-family: "FreeSetCTT";
   font-style: normal;
   font-weight: normal;
-  font-size: 10px;
-  line-height: 11px;
+  font-size: 12px;
+  line-height: 14px;
   color: #000000;
 }
 
@@ -846,13 +846,14 @@ body {
 .charts-content .chart-box .chart-block .doughnutlegend .legenditem .count {
   background: #B2DD6A;
   border-radius: 3px;
-  min-width: 60px;
+  min-width: 90px;
+  text-align: center;
   padding: 3px;
   font-family: "FreeSetCTT";
   font-style: normal;
   font-weight: 500;
-  font-size: 8px;
-  line-height: 11px;
+  font-size: 12px;
+  line-height: 14px;
   color: #FFFFFF;
 }
 
@@ -860,12 +861,12 @@ body {
   font-family: "FreeSetCTT";
   font-style: normal;
   font-weight: normal;
-  font-size: 10px;
-  line-height: 12px;
+  font-size: 12px;
+  line-height: 14px;
   color: #5B5555;
   padding: 3px;
   padding-left: 15px;
-  max-width: 120px;
+  max-width: 140px;
 }
 
 .charts-content .chart-box .chart-block .doughnutchart {
@@ -876,9 +877,10 @@ body {
 
 .charts-content .chart-box .chart-block .chart {
   margin: 0px;
-  width: 450px;
+  width: calc(100% - 60px);
   position: relative;
-  max-width: calc(100% - 40px);
+  max-width: 200px;
+  margin: auto;
 }
 
 .charts-content .chart-box .chart-block .chart svg {
@@ -947,23 +949,32 @@ body {
 }
 
 @media screen and (max-width: 1200px) {
+  .charts-content .chart-box .chart-block .chart {
+    width: calc(100% - 20px);
+  }
   .filter-wrapper .box {
     width: calc(33% - 20px);
   }
 }
 
 @media screen and (max-width: 900px) {
-  .chart-box.full-width .linechart.minwidth700 {
+  .chart-box.full-width .linechart.minwidth800 {
     overflow: auto;
   }
-  .chart-box.full-width .linechart.minwidth700 > div {
-    min-width: 700px;
+  .chart-box.full-width .linechart.minwidth800 > div {
+    min-width: 800px;
   }
-  .chart-box.full-width .linechart.minwidth750 {
+  .chart-box.full-width .linechart.minwidth900 {
     overflow: auto;
   }
-  .chart-box.full-width .linechart.minwidth750 > div {
-    min-width: 750px;
+  .chart-box.full-width .linechart.minwidth900 > div {
+    min-width: 900px;
+  }
+  .chart-box.full-width .linechart.minwidth850 {
+    overflow: auto;
+  }
+  .chart-box.full-width .linechart.minwidth850 > div {
+    min-width: 850px;
   }
   .filter-wrapper .box {
     width: calc(50% - 20px);
@@ -993,8 +1004,11 @@ body {
 }
 
 @media screen and (max-width: 768px) {
+  .doughnutchart {
+    max-width: 200px;
+  }
   .container .sidebar {
-    left: -160px;
+    left: -260px;
     top: 70px;
   }
   .container .header,
@@ -1017,15 +1031,24 @@ body {
     left: 0px;
     top: 70px;
   }
-  .chart-box.full-width .linechart.minwidth500 {
+  .chart-box .linechart.minwidth300 {
     overflow: auto;
   }
-  .chart-box.full-width .linechart.minwidth500 > div {
-    min-width: 500px;
+  .chart-box .linechart.minwidth300 > div {
+    min-width: 300px;
+  }
+  .chart-box.full-width .linechart.minwidth600 {
+    overflow: auto;
+  }
+  .chart-box.full-width .linechart.minwidth600 > div {
+    min-width: 600px;
   }
 }
 
 @media screen and (max-width: 500px) {
+  .doughnutchart {
+    max-width: 200px;
+  }
   .filter-wrapper {
     padding-left: 10px;
     padding-right: 10px;
@@ -1044,6 +1067,17 @@ body {
 }
 
 @media screen and (max-width: 450px) {
+  .charts-content .chart-box .chart-block {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .charts-content .chart-box .chart-block .doughnutchart,
+  .charts-content .chart-box .chart-block .doughnutlegend {
+    width: 100%;
+  }
   .filter-wrapper .box {
     margin: 5px;
     width: calc(100% - 10px);

@@ -239,7 +239,7 @@ var optionsTeam = {
 				lineWidth: 1
 			},
 			ticks: {
-                fontSize: 8
+                fontSize: 10
             }
 		}],
 		yAxes: [{
@@ -358,7 +358,7 @@ var optionsLogistic = {
 				lineWidth: 1
 			},
 			ticks: {
-                fontSize: 8
+                fontSize: 10
             }
 		}],
 		yAxes: [{
@@ -479,7 +479,7 @@ var optionsSupport = {
 				lineWidth: 1,
 			},
 			ticks: {
-                fontSize: 8
+                fontSize: 10
             }
 		}],
 		yAxes: [{
@@ -601,7 +601,7 @@ var optionsDocument = {
 				lineWidth: 1,
 			},
 			ticks: {
-                fontSize: 8
+                fontSize: 10
             }
 		}],
 		yAxes: [{
@@ -723,7 +723,7 @@ var optionsCooperation = {
 				lineWidth: 1,
 			},
 			ticks: {
-                fontSize: 8
+                fontSize: 10
             }
 		}],
 		yAxes: [{

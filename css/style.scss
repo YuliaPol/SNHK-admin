@@ -1,7 +1,7 @@
 $fontcolor: #505050;
 $backgroundpage: #F4F4F4;
 $fontpage: 'FreeSetCTT';
-$widthsidebar: 160px;
+$widthsidebar: 260px;
 
 @import url(../fonts/stylesheet.css);
 
@@ -63,7 +63,7 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
         margin-left: $widthsidebar;
         background-color: #ffffff;
         height: 70px;
-        width: calc(100% - 160px);
+        width: calc(100% - 260px);
         display: flex;
         align-self: center;
         justify-content: space-between;
@@ -263,8 +263,8 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
                         font-family: $fontpage;
                         font-style: normal;
                         font-weight: normal;
-                        font-size: 10px;
-                        line-height: 11px;
+                        font-size: 14px;
+                        line-height: 16px;
                         text-align: center;
                         color: #565252;
                         text-decoration: none;
@@ -325,8 +325,8 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
             font-family: $fontpage;
             font-style: normal;
             font-weight: normal;
-            font-size: 10px;
-            line-height: 11px;
+            font-size: 12px;
+            line-height: 14px;
             color: #797777;
             margin-bottom: 2px !important;
             border-bottom: 1px solid #BEBEBE;
@@ -341,8 +341,8 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
             font-family: $fontpage;
             font-style: normal;
             font-weight: normal;
-            font-size: 10px;
-            line-height: 11px;
+            font-size: 12px;
+            line-height: 14px;
             color: #383232;
             outline: none;
             box-shadow: none;
@@ -409,16 +409,16 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
             font-family: $fontpage;
             font-style: normal;
             font-weight: normal;
-            font-size: 12px;
-            line-height: 14px;
+            font-size: 14px;
+            line-height: 16px;
             text-align: center;
             color: #000000;
             a {
                 font-family: $fontpage;
                 font-style: normal;
                 font-weight: normal;
-                font-size: 12px;
-                line-height: 14px;
+                font-size: 14px;
+                line-height: 16px;
                 text-align: center;
                 color: #000000;
                 text-decoration: none;
@@ -428,7 +428,7 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
     }
 }
 .content {
-    width: calc(100% - 160px);
+    width: calc(100% - 260px);
     min-height: calc(100vh - 70px);
     margin-left: $widthsidebar;
     transition: all 0.3s;
@@ -456,8 +456,8 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
     font-family: $fontpage;
     font-style: normal;
     font-weight: normal;
-    font-size: 10px;
-    line-height: 11px;
+    font-size: 12px;
+    line-height: 14px;
     &:hover {
         background: #11CAE3;
     }
@@ -468,8 +468,8 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
     font-family: $fontpage;
     font-style: normal;
     font-weight: normal;
-    font-size: 10px;
-    line-height: 11px;
+    font-size: 12px;
+    line-height: 14px;
 }
 .daterangepicker .calendar-table td.active,
 .daterangepicker .calendar-table td.active:hover {
@@ -482,8 +482,8 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
     font-family: $fontpage;
     font-style: normal;
     font-weight: normal;
-    font-size: 10px;
-    line-height: 11px; 
+    font-size: 12px;
+    line-height: 14px; 
 }
 .charts-content {
     padding-top: 15px;
@@ -510,8 +510,8 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
             font-family: $fontpage;
             font-style: normal;
             font-weight: normal;
-            font-size: 12px;
-            line-height: 14px;
+            font-size: 16px;
+            line-height: 18px;
             color: #000000;
             padding-bottom: 15px;
         }
@@ -535,10 +535,10 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
                     }
                     .active-row {
                         border-radius: 5px;
-                        height: 5px;
+                        height: 7px;
                         position: absolute;
-                        top: 0px;
-                        bottom: 0px;
+                        top: -1px;
+                        bottom: -1px;
                         left: 0px;
                         background: #ffffff;
                         box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
@@ -578,8 +578,8 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
                     font-family: $fontpage;
                     font-style: normal;
                     font-weight: normal;
-                    font-size: 10px;
-                    line-height: 11px;
+                    font-size: 12px;
+                    line-height: 14px;
                     color: #000000;
                 }
                 .stars {
@@ -616,25 +616,26 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
                     .count {
                         background: #B2DD6A;
                         border-radius: 3px;
-                        min-width: 60px;
+                        min-width: 90px;
+                        text-align: center;
                         padding: 3px;
                         font-family: $fontpage;
                         font-style: normal;
                         font-weight: 500;
-                        font-size: 8px;
-                        line-height: 11px;
+                        font-size: 12px;
+                        line-height: 14px;
                         color: #FFFFFF;
                     }
                     .label {
                         font-family: $fontpage;
                         font-style: normal;
                         font-weight: normal;
-                        font-size: 10px;
-                        line-height: 12px;
+                        font-size: 12px;
+                        line-height: 14px;
                         color: #5B5555;
                         padding: 3px;
                         padding-left: 15px;
-                        max-width: 120px;
+                        max-width: 140px;
                     }
                 }
             }
@@ -645,9 +646,10 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
             }
             .chart {
                 margin: 0px;
-                width: 450px;
+                width: calc(100% - 60px);
                 position: relative;
-                max-width: calc(100% - 40px);
+                max-width: 200px;
+                margin: auto;
                 svg {
                     width: 100%;
                 }
@@ -701,24 +703,35 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
     }
 }
 @media screen and (max-width: 1200px) {
+    .charts-content .chart-box .chart-block .chart {
+        width: calc(100% - 20px);
+    }
     .filter-wrapper .box {
         width: calc(33% - 20px);
     }
 }
 @media screen and (max-width: 900px) {
     .chart-box.full-width .linechart {
-        &.minwidth700 {
+        &.minwidth800 {
             overflow: auto;
             & > div {
-                min-width: 700px;
+                min-width: 800px;
             }
         }
     }
     .chart-box.full-width .linechart {
-        &.minwidth750 {
+        &.minwidth900 {
             overflow: auto;
             & > div {
-                min-width: 750px;
+                min-width: 900px;
+            }
+        }
+    }
+    .chart-box.full-width .linechart {
+        &.minwidth850 {
+            overflow: auto;
+            & > div {
+                min-width: 850px;
             }
         }
     }
@@ -745,6 +758,9 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
     }
 }
 @media screen and (max-width: 768px) {
+    .doughnutchart {
+        max-width: 200px;
+    }
     .container .sidebar {
         left: -$widthsidebar;
         top: 70px;
@@ -769,17 +785,28 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
         left: 0px;
         top: 70px;
     }
-    .chart-box.full-width .linechart {
-        &.minwidth500 {
+    .chart-box .linechart {
+        &.minwidth300 {
             overflow: auto;
             & > div {
-                min-width: 500px;
+                min-width: 300px;
+            }
+        }
+    }
+    .chart-box.full-width .linechart {
+        &.minwidth600 {
+            overflow: auto;
+            & > div {
+                min-width: 600px;
             }
         }
     }
 }
 
 @media screen and (max-width: 500px) {
+    .doughnutchart {
+        max-width: 200px;
+    }
     .filter-wrapper {
         padding-left: 10px;
         padding-right: 10px;
@@ -798,6 +825,13 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
     }
 }
 @media screen and (max-width: 450px) {
+    .charts-content .chart-box .chart-block {
+        flex-direction: column;
+        .doughnutchart,
+        .doughnutlegend {
+            width: 100%;
+        }
+    }
     .filter-wrapper .box {
         margin: 5px;
         width: calc(100% - 10px);
