@@ -23,7 +23,7 @@ $(document).ready(function () {
 		}, 50);
 	})
 });
-const images = [' ', './../img/star5.svg', './../img/star4.svg', './../img/star3.svg', './../img/star2.svg', './../img/star1.svg'];
+const images = [' ', '../img/star5.svg', '../img/star4.svg', '../img/star3.svg', '../img/star2.svg', '../img/star1.svg'];
 (function()
 {
     var ShadowLineElement = Chart.elements.Line.extend({
