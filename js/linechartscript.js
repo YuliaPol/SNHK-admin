@@ -10,7 +10,8 @@ var realDW = $(document).width(), // @int --> real document width
 	chartInstanceTeam,
 	chartInstanceLogistic,
 	chartInstanceSupport,
-	chartInstanceDocument
+	chartInstanceDocument,
+	chartInstanceCooperation
 	; // @string ---------------------> side of legend position in charts
 $(document).ready(function () {
 	// add charts
@@ -22,7 +23,7 @@ $(document).ready(function () {
 		}, 50);
 	})
 });
-const images = [' ', './../img/star5.png', './../img/star4.png', './../img/star3.png', './../img/star2.png', './../img/star1.svg'];
+const images = [' ', './../img/star5.svg', './../img/star4.svg', './../img/star3.svg', './../img/star2.svg', './../img/star1.svg'];
 (function()
 {
     var ShadowLineElement = Chart.elements.Line.extend({
@@ -134,6 +135,34 @@ const images = [' ', './../img/star5.png', './../img/star4.png', './../img/star3
     });
 })();
 
+
+(function()
+{
+    var ShadowLineElement = Chart.elements.Line.extend({
+        draw: function()
+        {
+            var ctx = this._chart.ctx;
+            var originalStroke = ctx.stroke;
+            ctx.stroke = function()
+            {
+                ctx.save();
+                ctx.shadowColor = '#005E94';
+                ctx.shadowBlur = 4;
+                ctx.shadowOffsetX = 0;
+                ctx.shadowOffsetY = 0;
+                originalStroke.apply(this, arguments);
+                ctx.restore();
+            };
+            Chart.elements.Line.prototype.draw.apply(this, arguments);
+            ctx.stroke = originalStroke;
+        }
+    });
+    Chart.defaults.ShadowLineDarkBlue = Chart.defaults.line;
+    Chart.controllers.ShadowLineDarkBlue = Chart.controllers.line.extend({
+        datasetElementType: ShadowLineElement
+    });
+})();
+
 //teamPercent
 var teamDataCountPerc = new Array(teamDataCount.length);
 if(teamDataCount) {
@@ -182,6 +211,17 @@ if(documentDataCount) {
 	}
 }
 
+//cooperationPercent
+var cooperationDataCountPerc = new Array(cooperationDataCount.length);
+if(cooperationDataCount) {
+	var sum = 0;
+	for (let i = 0; i < cooperationDataCount.length; i++) {
+		sum = sum + cooperationDataCount[i];
+	}
+	for (let i = 0; i < cooperationDataCount.length; i++) {
+		cooperationDataCountPerc[i] = Math.round((100*cooperationDataCount[i]) / sum);
+	}
+}
 
 //options team Chart
 var optionsTeam = {
@@ -272,13 +312,13 @@ var optionsTeam = {
 			// Set Text
 			if (tooltipModel.body) {
 				var titleLines = tooltipModel.title || [];
-				var bodyLines = tooltipModel.body.map(getBody);
-
+				var bodyLines = tooltipModel.body.map(getBody);	
 				var innerHtml = '<thead>';
 				innerHtml += '</thead><tbody>';
 				bodyLines.forEach(function(body, i) {
+					var index = tooltipModel.dataPoints[0].index;
 					innerHtml +='<tr><td><div style="background-image:url(./../img/tooltip-bg1.svg); background-repeat: no-repeat; background-size: contain; background-position: center;">';
-					innerHtml += '<div style="padding: 10px  6px 15px; font-size: 12px; line-height: 14px; color: #ffffff;">' + teamDataCountPerc[i] +'% / ' + teamDataCount[i] + 'шт</div></td></tr></div>';
+					innerHtml += '<div style="padding: 10px  6px 15px; font-size: 12px; line-height: 14px; color: #ffffff;">' + teamDataCountPerc[index] +'% / ' + teamDataCount[index] + 'шт</div></td></tr></div>';
 				});
 				innerHtml += '</tbody>';
 				var tableRoot = tooltipEl.querySelector('table');
@@ -396,8 +436,9 @@ var optionsLogistic = {
 				var innerHtml = '<thead>';
 				innerHtml += '</thead><tbody>';
 				bodyLines.forEach(function(body, i) {
+					var index = tooltipModel.dataPoints[0].index;
 					innerHtml +='<tr><td><div style="background-image:url(./../img/tooltip-bg2.svg); background-repeat: no-repeat; background-size: contain; background-position: center;">';
-					innerHtml += '<div style="padding: 10px  6px 15px; font-size: 12px; line-height: 14px; color: #ffffff;">' + logisticDataCountPerc[i] +'% / ' + logisticDataCount[i] + 'шт</div></td></tr></div>';
+					innerHtml += '<div style="padding: 10px  6px 15px; font-size: 12px; line-height: 14px; color: #ffffff;">' + logisticDataCountPerc[index] +'% / ' + logisticDataCount[index] + 'шт</div></td></tr></div>';
 				});
 				innerHtml += '</tbody>';
 				var tableRoot = tooltipEl.querySelector('table');
@@ -517,8 +558,9 @@ var optionsSupport = {
 				var innerHtml = '<thead>';
 				innerHtml += '</thead><tbody>';
 				bodyLines.forEach(function(body, i) {
+					var index = tooltipModel.dataPoints[0].index;
 					innerHtml +='<tr><td><div style="background-image:url(./../img/tooltip-bg3.svg); background-repeat: no-repeat; background-size: contain; background-position: center;">';
-					innerHtml += '<div style="padding: 10px  6px 15px; font-size: 12px; line-height: 14px; color: #ffffff;">' + supportDataCountPerc[i] +'% / ' + supportDataCount[i] + 'шт</div></td></tr></div>';
+					innerHtml += '<div style="padding: 10px  6px 15px; font-size: 12px; line-height: 14px; color: #ffffff;">' + supportDataCountPerc[index] +'% / ' + supportDataCount[index] + 'шт</div></td></tr></div>';
 				});
 				innerHtml += '</tbody>';
 				var tableRoot = tooltipEl.querySelector('table');
@@ -638,8 +680,130 @@ var optionsDocument = {
 				var innerHtml = '<thead>';
 				innerHtml += '</thead><tbody>';
 				bodyLines.forEach(function(body, i) {
+					var index = tooltipModel.dataPoints[0].index;
 					innerHtml +='<tr><td><div style="background-image:url(./../img/tooltip-bg4.svg); background-repeat: no-repeat; background-size: contain; background-position: center;">';
-					innerHtml += '<div style="padding: 10px  6px 15px; font-size: 12px; line-height: 14px; color: #ffffff;">' + documentDataCountPerc[i] +'% / ' + documentDataCount[i] + 'шт</div></td></tr></div>';
+					innerHtml += '<div style="padding: 10px  6px 15px; font-size: 12px; line-height: 14px; color: #ffffff;">' + documentDataCountPerc[index] +'% / ' + documentDataCount[index] + 'шт</div></td></tr></div>';
+				});
+				innerHtml += '</tbody>';
+				var tableRoot = tooltipEl.querySelector('table');
+				tableRoot.innerHTML = innerHtml;
+			}
+
+			// `this` will be the overall tooltip
+			var position = this._chart.canvas.getBoundingClientRect();
+
+			// Display, position, and set styles for font
+			tooltipEl.style.opacity = 1;
+			tooltipEl.style.position = 'absolute';
+			tooltipEl.style.left = position.left + window.pageXOffset + tooltipModel.caretX - 48 + 'px';
+			tooltipEl.style.top = position.top + window.pageYOffset + tooltipModel.caretY  - 55 + 'px';
+			tooltipEl.style.fontFamily = 'Arial';
+			tooltipEl.style.fontSize = '12px';
+			tooltipEl.style.fontStyle = tooltipModel._bodyFontStyle;
+			tooltipEl.style.padding = '10px ' +  '10px';
+			tooltipEl.style.pointerEvents = 'none';
+		}
+	}
+};
+
+//options cooperation Chart
+var optionsCooperation = {
+	responsive: true,
+	maintainAspectRatio: true,
+	cutoutPercentage: 70,
+	animation: {
+		easing: 'easeInOutQuad',
+		duration: 520
+	},
+	scales: {
+		xAxes: [{
+			weight: 1,
+			gridLines: {
+				color: '#D5D3D3',
+				lineWidth: 1,
+			},
+			ticks: {
+                fontSize: 8
+            }
+		}],
+		yAxes: [{
+            barPercentage: 1.0,
+            weight: 100,
+			gridLines: {
+				color: '#D5D3D3',
+				lineWidth: 1
+            },
+            ticks: {
+				min: 1,
+				max: 6,
+				stepSize: 1,
+				callback: function(value, index, values) {
+					return '               ';
+				}
+			}
+		}],
+	},
+	elements: {
+		line: {
+			tension: 0.4,
+		}
+	},
+	legend: {
+		display: false
+	},
+	point: {
+		backgroundColor: 'white'
+	},
+	tooltips: {
+		titleFontFamily: 'Open Sans',
+		backgroundColor: '#BDDA1C',
+		titleFontColor: '#000',
+		caretSize: 10,
+		cornerRadius: 10,
+		xPadding: 10,
+		yPadding: 10,
+		yAlign: 'bottom',
+		xAlign: 'center',
+		enabled: false,
+		custom: function(tooltipModel) {
+			// Tooltip Element
+			var tooltipEl = document.getElementById('chartjs-tooltip');
+			// Create element on first render
+			if (!tooltipEl) {
+				tooltipEl = document.createElement('div');
+				tooltipEl.id = 'chartjs-tooltip';
+				tooltipEl.innerHTML = '<table></table>';
+				document.body.appendChild(tooltipEl);
+			}
+			// Hide if no tooltip
+			if (tooltipModel.opacity === 0) {
+				tooltipEl.style.opacity = 0;
+				return;
+			}
+
+			// Set caret Position
+			tooltipEl.classList.remove('above', 'below', 'no-transform');
+			if (tooltipModel.yAlign) {
+				tooltipEl.classList.add(tooltipModel.yAlign);
+			} else {
+				tooltipEl.classList.add('no-transform');
+			}
+
+			function getBody(bodyItem) {
+				return bodyItem.lines;
+			}
+
+			// Set Text
+			if (tooltipModel.body) {
+				var titleLines = tooltipModel.title || [];
+				var bodyLines = tooltipModel.body.map(getBody);
+
+				var innerHtml = '<thead>';
+				innerHtml += '</thead><tbody>';
+				bodyLines.forEach(function(body, i) {
+					var index = tooltipModel.dataPoints[0].index;
+					innerHtml +='<tr><td><div style="background-image:url(./../img/tooltip-bg5.svg); background-repeat: no-repeat; background-size: contain; background-position: center;">';
+					innerHtml += '<div style="padding: 10px  6px 15px; font-size: 12px; line-height: 14px; color: #ffffff;">' + cooperationDataCountPerc[index] +'% / ' + cooperationDataCount[index] + 'шт</div></td></tr></div>';
 				});
 				innerHtml += '</tbody>';
 				var tableRoot = tooltipEl.querySelector('table');
@@ -672,7 +836,7 @@ function generateCharts() {
 
 	gradient.addColorStop(0, '#E6EC00');
 	gradient.addColorStop(0.3, 'rgba(189,218,28, 0.25)');
-	gradient.addColorStop(1, 'rgba(178, 221, 106, 0.1)');
+	gradient.addColorStop(0.4, 'rgba(178, 221, 106, 0)');
 
 	
 	//data for team chart
@@ -714,9 +878,9 @@ function generateCharts() {
 	var chartLogistic    = document.getElementById('logisticsChart').getContext('2d'),
 	gradient = chartLogistic.createLinearGradient(0, 0, 0, 450);
 
-	gradient.addColorStop(0, '#006B9F');
+	gradient.addColorStop(0, 'rgba(0, 149, 197, 1)');
 	gradient.addColorStop(0.3, 'rgba(0, 149, 197, 0.25)');
-	gradient.addColorStop(1, 'rgba(0, 149, 197, 0.1)');
+	gradient.addColorStop(0.4, 'rgba(0, 149, 197, 0)');
 
 	
 	//data for logistic chart
@@ -759,9 +923,9 @@ function generateCharts() {
 	var chartSupport    = document.getElementById('supportChart').getContext('2d'),
 	gradient = chartSupport.createLinearGradient(0, 0, 0, 450);
 
-	gradient.addColorStop(0, '#0CC1CA');
-	gradient.addColorStop(0.3, 'rgba(116, 206, 158, 0.25)');
-	gradient.addColorStop(1, 'rgba(116, 206, 158, 0.1)');
+	gradient.addColorStop(0, 'rgba(116, 206, 158, 1)');
+	gradient.addColorStop(0.2, 'rgba(116, 206, 158, 0.25)');
+	gradient.addColorStop(0.35, 'rgba(116, 206, 158, 0)');
 
 	
 	//data for Support chart
@@ -805,7 +969,7 @@ function generateCharts() {
 
 	gradient.addColorStop(0, 'rgba(106, 185, 56, 1)');
 	gradient.addColorStop(0.3, 'rgba(106, 185, 56, 0.25)');
-	gradient.addColorStop(1, 'rgba(106, 185, 56, 0.1)');
+	gradient.addColorStop(0.4, 'rgba(106, 185, 56, 0)');
 
 	
 	//data for Document chart
@@ -842,6 +1006,50 @@ function generateCharts() {
 		}],
 		options: optionsDocument
 	});
+
+
+			
+	var chartCooperation    = document.getElementById('cooperationChart').getContext('2d'),
+	gradient = chartCooperation.createLinearGradient(0, 0, 0, 450);
+	gradient.addColorStop(0, '#006B9F');
+	gradient.addColorStop(0.3, 'rgba(0, 107, 159, 0.25)');
+	gradient.addColorStop(0.4, 'rgba(0, 107, 159, 0)');
+
+	
+	//data for cooperation chart
+	var cooperationData  = {
+		labels: cooperationDataLabels,
+		datasets: [{
+				label: 'Custom Label Name',
+				backgroundColor: gradient,
+				pointBackgroundColor: 'white',
+				borderWidth: 1,
+				borderColor: '#005E94',
+				data: cooperationDataRatings
+		}]
+	};
+
+	var chartInstanceCooperation = new Chart(chartCooperation, {
+		type: 'ShadowLineDarkBlue',
+		data: cooperationData,
+		responsive: true,
+		plugins: [{
+			afterDraw: chartCooperation => {      
+			  var ctx = chartCooperation.chart.ctx; 
+			  var yAxis = chartCooperation.scales['y-axis-0'];
+			  yAxis.ticks.forEach((data, index) => {  
+				var y = yAxis.getPixelForTick(index);  
+				var image = new Image();
+				image.src = images[index];
+				var imageline = new Image();
+				imageline.src = './../img/line.svg';
+				ctx.drawImage(image, 0,  y - 15);
+				ctx.drawImage(imageline, 0,  y);
+			  });      
+			}
+		}],
+		options: optionsCooperation
+	});
 }
 /**
  *   function generate new charts
@@ -859,12 +1067,16 @@ function setNewPosition() {
 	}
 	if(chartInstanceDocument){
         chartInstanceDocument.destroy();
+	}
+	if(chartInstanceCooperation){
+        chartInstanceCooperation.destroy();
     }
     var chartArr = [
         $('#teamChart'),
         $('#logisticsChart'),
         $('#supportsChart'),
         $('#documentsChart'),
+        $('#cooperationsChart'),
     ];
 
     chartArr.forEach(function (item) {
@@ -890,6 +1102,9 @@ function setNewPosition() {
 	}
 	if(chartInstanceDocument){
         chartInstanceDocument.update();
+	}
+	if(chartInstanceCooperation){
+        chartInstanceCooperation.update();
     }
 } // set new width and height for charts
 function getmediaPeriod(w) {
@@ -948,7 +1163,10 @@ function setSize() {
 		$('#supportChart').attr('height', 200);
 		
 		$('#documentChart').attr('width', 1200);
-        $('#documentChart').attr('height', 200);
+		$('#documentChart').attr('height', 200);
+		
+		$('#cooperationChart').attr('width', 1200);
+        $('#cooperationChart').attr('height', 200);
 
     }
     if ($(document).width() > 1700) {
@@ -963,7 +1181,10 @@ function setSize() {
 		$('#supportChart').attr('height', 200);
 		
 		$('#documentChart').attr('width', 1200);
-        $('#documentChart').attr('height', 200);
+		$('#documentChart').attr('height', 200);
+				
+		$('#cooperationChart').attr('width', 1200);
+        $('#cooperationChart').attr('height', 200);
     }
     else if ($(document).width() > 1600) {
         $('#teamChart').attr('width', 700);
@@ -977,7 +1198,10 @@ function setSize() {
 		$('#supportChart').attr('height', 200);
 		
 		$('#documentChart').attr('width', 1000);
-        $('#documentChart').attr('height', 200);
+		$('#documentChart').attr('height', 200);
+				
+		$('#cooperationChart').attr('width', 1000);
+        $('#cooperationChart').attr('height', 200);
     }
     else if ($(document).width() > 1500) {
         $('#teamChart').attr('width', 700);
@@ -990,7 +1214,11 @@ function setSize() {
 		$('#supportChart').attr('height', 200);
 		
 		$('#documentChart').attr('width', 900);
-        $('#documentChart').attr('height', 200);
+		$('#documentChart').attr('height', 200);
+		
+		$('#cooperationChart').attr('width', 900);
+        $('#cooperationChart').attr('height', 200);
+
     }
     else if ($(document).width() > 1400) {
         $('#teamChart').attr('width', 600);
@@ -1003,7 +1231,11 @@ function setSize() {
 		$('#supportChart').attr('height', 200);
 		
 		$('#documentChart').attr('width', 800);
-        $('#documentChart').attr('height', 200);
+		$('#documentChart').attr('height', 200);
+		
+		$('#cooperationChart').attr('width', 800);
+        $('#cooperationChart').attr('height', 200);
+
     }
     else if ($(document).width() > 1350) {
         $('#teamChart').attr('width', 500);
@@ -1016,7 +1248,11 @@ function setSize() {
 		$('#supportChart').attr('height', 200);
 		
 		$('#documentChart').attr('width', 800);
-        $('#documentChart').attr('height', 200);
+		$('#documentChart').attr('height', 200);
+		
+		$('#cooperationChart').attr('width', 800);
+        $('#cooperationChart').attr('height', 200);
+
     }
     else if ($(document).width() > 1300) {
         $('#teamChart').attr('width', 450);
@@ -1029,7 +1265,11 @@ function setSize() {
 		$('#supportChart').attr('height', 200);
 		
 		$('#documentChart').attr('width', 800);
-        $('#documentChart').attr('height', 200);
+		$('#documentChart').attr('height', 200);
+		
+		$('#cooperationChart').attr('width', 800);
+        $('#cooperationChart').attr('height', 200);
+
     }
     else if ($(document).width() > 1200) {
         $('#teamChart').attr('width', 450);
@@ -1042,7 +1282,11 @@ function setSize() {
 		$('#supportChart').attr('height', 200);
 		
 		$('#documentChart').attr('width', 800);
-        $('#documentChart').attr('height', 200);
+		$('#documentChart').attr('height', 200);
+		
+		$('#cooperationChart').attr('width', 800);
+        $('#cooperationChart').attr('height', 200);
+
     }
     else if ($(document).width() > 1000) {
         $('#teamChart').attr('width', 400);
@@ -1056,7 +1300,11 @@ function setSize() {
 		$('#supportChart').attr('height', 200);
 		
 		$('#documentChart').attr('width', 800);
-        $('#documentChart').attr('height', 200);
+		$('#documentChart').attr('height', 200);
+		
+		$('#cooperationChart').attr('width', 800);
+        $('#cooperationChart').attr('height', 200);
+
 	}
 	else if ($(document).width() > 900) {
         $('#teamChart').attr('width', 300);
@@ -1069,7 +1317,11 @@ function setSize() {
 		$('#supportChart').attr('height', 200);
 		
 		$('#documentChart').attr('width', 800);
-        $('#documentChart').attr('height', 200);
+		$('#documentChart').attr('height', 200);
+		
+		$('#cooperationChart').attr('width', 800);
+        $('#cooperationChart').attr('height', 200);
+
     }
     else if ($(document).width() > 767) {
         $('#teamChart').attr('width', 600);
@@ -1083,7 +1335,11 @@ function setSize() {
 		$('#supportChart').attr('height', 200);
 		
 		$('#documentChart').attr('width', 800);
-        $('#documentChart').attr('height', 200);
+		$('#documentChart').attr('height', 200);
+		
+		$('#cooperationChart').attr('width', 800);
+        $('#cooperationChart').attr('height', 200);
+
     }
     else if ($(document).width() > 600) {
         $('#teamChart').attr('width', 500);
@@ -1097,7 +1353,11 @@ function setSize() {
 		$('#supportChart').attr('height', 200);
 		
 		$('#documentChart').attr('width', 500);
-        $('#documentChart').attr('height', 200);
+		$('#documentChart').attr('height', 200);
+		
+		$('#cooperationChart').attr('width', 500);
+        $('#cooperationChart').attr('height', 200);
+
     }
     else {
         $('#teamChart').attr('width', 350);
@@ -1111,7 +1371,10 @@ function setSize() {
 		$('#supportChart').attr('height', 200);
 		
 		$('#documentChart').attr('width', 500);
-        $('#documentChart').attr('height', 200);
+		$('#documentChart').attr('height', 200);
+		
+		$('#cooperationChart').attr('width', 500);
+        $('#cooperationChart').attr('height', 200);
     }
 
 } // add media sizes

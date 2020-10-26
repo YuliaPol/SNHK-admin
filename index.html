@@ -361,6 +361,18 @@
                             </div>
                         </div>
                     </div>
+                    <div class="chart-box full-width">
+                        <div class="chart-header">
+                            Оцените, пожалуйста, насколько каждое из приведенных в таблице высказываний подходит к Вашему сотрудничеству с компанией / СНХК?
+                        </div>
+                        <div class="chart-block">
+                            <div class="linechart minwidth700">
+                                <div style="position: relative; height:100%; width:100%">
+                                    <canvas id="cooperationChart" style="width: 500px; height: 200px;"></canvas>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -376,6 +388,7 @@
     <script src="./js/Chart.min.js"></script>
     <script src="./js/script.js"></script>
     <script>
+        //data for manufactory chart
         var dataManufactory = [
             {
                 title: "СИБУР Нефтехим",
@@ -393,6 +406,7 @@
                 color: "#94D587"
             }
         ];
+        //data for Place chart
         var dataPlace = [
             {
                 title: "Первое место",
@@ -415,14 +429,20 @@
                 color: "#94D587"
             }
         ];
+
+        //data for team chart
         var teamDataLabels = [[['Скорость принятия'], ['решений']], [['Качество обратной'], [' связи']], [['Скорость  принятия'], ['решений']]];
         var teamDataRatings = [5, 3.5, 4.7];
+        //for tooltips
         var teamDataCount = [10, 20, 40];
 
+        //data for logistic chart
         var logisticDataLabels = [[['Качество'], ['подвижного состава']], [['Качество маркировки (нанесение'], [' знаков опасности, трафаретов)']]];
         var logisticDataRatings = [5, 3.2];
+        //for tooltips
         var logisticDataCount = [40, 20];
 
+        //data for support chart
         var supportDataLabels = [
             [['Своевременность'], ['погрузки']],
             [['Качество отгрузки, а'], [' именно соотвествие'], [' качества']],
@@ -433,16 +453,36 @@
             [['Качество маркировки']]
         ];
         var supportDataRatings = [5, 3.2, 4, 3.7, 4.8, 2.8, 4.7];
+        //for tooltips
         var supportDataCount = [40, 20, 30, 40, 80, 70, 10];
 
+        //data for document chart
         var documentDataLabels = [
             [['Процесс заключения договоров '], ['(дополнительных соглашений)']],
             [['Работа СИБУР-ЦОБ (Нижний Новгород) по'], [' предоставлению договорных документов, счетов-фактур,'], [' товарных накладных ТОРГ-12 и актов сверки'], ['взаиморасчетов']],
             [['Выставление инвойсов от СНХК']]
         ];
         var documentDataRatings = [5, 3.2, 4];
+        //for tooltips
         var documentDataCount = [40, 20, 30];
 
+
+        //data for cooperation chart
+        var cooperationDataLabels = [
+            [['В будущем наше'], ['сотрудничество'], ['расширится']],
+            [['Эта компания'], [' является одним из'], ['наших важнейших'], ['поставщиков']],
+            [['Предлагает'],['хорошее сочетание'], ['цены и качества']],
+            [['Я доволен этой'],['компанией']],
+            [['Эта компания'],['ценит своих'], ['клиентов']],
+            [['Этой компании'],['можно доверять']],
+            [['Я рассказываю'], ['коллегам только'], ['положительное о'], ['сотрудничестве с'], ['этой компанией']],
+            [['Эта компания'],['заслуживает'],['положительных'],['рекомендаций']],
+            [['С этой компанией'],['комфортно иметь'],['дело']],
+            [['Компания'],['руководствуется'],['международными'],['правилами и'], ['стандартами']]
+        ];
+        var cooperationDataRatings = [5, 3.2, 4, 3.7, 4.8, 2.8, 4.7, 3.5, 4.1, 1.2];
+        //for tooltips
+        var cooperationDataCount = [40, 20, 30, 40, 80, 70, 10, 70, 80, 25];
            
     </script>
     <script>

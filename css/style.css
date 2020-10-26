@@ -865,6 +865,7 @@ body {
   color: #5B5555;
   padding: 3px;
   padding-left: 15px;
+  max-width: 120px;
 }
 
 .charts-content .chart-box .chart-block .doughnutchart {
