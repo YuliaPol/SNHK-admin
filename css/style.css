@@ -959,6 +959,12 @@ body {
   .chart-box.full-width .linechart.minwidth700 > div {
     min-width: 700px;
   }
+  .chart-box.full-width .linechart.minwidth750 {
+    overflow: auto;
+  }
+  .chart-box.full-width .linechart.minwidth750 > div {
+    min-width: 750px;
+  }
   .filter-wrapper .box {
     width: calc(50% - 20px);
   }

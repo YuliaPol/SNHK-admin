@@ -1346,11 +1346,11 @@ function setSize() {
 
     }
     else if ($(document).width() > 600) {
-        $('#teamChart').attr('width', 500);
-		$('#teamChart').attr('height', 200);
+        $('#teamChart').attr('width', 400);
+		$('#teamChart').attr('height', 150);
 		
-		$('#logisticsChart').attr('width', 500);
-		$('#logisticsChart').attr('height', 200);
+		$('#logisticsChart').attr('width', 400);
+		$('#logisticsChart').attr('height', 150);
 		
 				
 		$('#supportChart').attr('width', 800);
@@ -1359,16 +1359,16 @@ function setSize() {
 		$('#documentChart').attr('width', 500);
 		$('#documentChart').attr('height', 200);
 		
-		$('#cooperationChart').attr('width', 500);
+		$('#cooperationChart').attr('width', 800);
         $('#cooperationChart').attr('height', 200);
 
     }
     else {
         $('#teamChart').attr('width', 350);
-		$('#teamChart').attr('height', 200);
+		$('#teamChart').attr('height', 150);
 		
 		$('#logisticsChart').attr('width', 350);
-		$('#logisticsChart').attr('height', 200);
+		$('#logisticsChart').attr('height', 150);
 		
 				
 		$('#supportChart').attr('width', 800);
@@ -1377,7 +1377,7 @@ function setSize() {
 		$('#documentChart').attr('width', 500);
 		$('#documentChart').attr('height', 200);
 		
-		$('#cooperationChart').attr('width', 500);
+		$('#cooperationChart').attr('width', 800);
         $('#cooperationChart').attr('height', 200);
     }
 
