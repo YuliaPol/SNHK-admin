@@ -970,6 +970,12 @@ body {
   .chart-box.full-width .linechart.minwidth900 > div {
     min-width: 900px;
   }
+  .chart-box.full-width .linechart.minwidth950 {
+    overflow: auto;
+  }
+  .chart-box.full-width .linechart.minwidth950 > div {
+    min-width: 950px;
+  }
   .chart-box.full-width .linechart.minwidth850 {
     overflow: auto;
   }
@@ -1077,6 +1083,10 @@ body {
   .charts-content .chart-box .chart-block .doughnutchart,
   .charts-content .chart-box .chart-block .doughnutlegend {
     width: 100%;
+  }
+  .charts-content .chart-box .chart-block .doughnutlegend .legenditem {
+    max-width: 250px;
+    margin: auto;
   }
   .filter-wrapper .box {
     margin: 5px;
