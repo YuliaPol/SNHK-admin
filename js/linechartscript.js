@@ -816,8 +816,12 @@ var optionsCooperation = {
 			// Display, position, and set styles for font
 			tooltipEl.style.opacity = 1;
 			tooltipEl.style.position = 'absolute';
+			console.log(position.left);
+			console.log(window.pageXOffset);
+			console.log(tooltipModel.caretX);
+			console.log(tooltipModel.width);
 			tooltipEl.style.left = position.left + window.pageXOffset + tooltipModel.caretX - 48 + 'px';
-			tooltipEl.style.top = position.top + window.pageYOffset + tooltipModel.caretY  - 55 + 'px';
+			tooltipEl.style.top = position.top + window.pageYOffset + tooltipModel.caretY  -  55 + 'px';
 			tooltipEl.style.fontFamily = 'Arial';
 			tooltipEl.style.fontSize = '12px';
 			tooltipEl.style.fontStyle = tooltipModel._bodyFontStyle;
@@ -852,7 +856,7 @@ function generateCharts() {
 		}]
 	};
 
-	var chartInstanceTeam = new Chart(chartTeam, {
+	chartInstanceTeam = new Chart(chartTeam, {
 		type: 'ShadowLineGreen',
 		data: teamData,
 		responsive: true,
@@ -896,7 +900,7 @@ function generateCharts() {
 		}]
 	};
 
-	var chartInstanceLogistic = new Chart(chartLogistic, {
+	chartInstanceLogistic = new Chart(chartLogistic, {
 		type: 'ShadowLineBlue',
 		data: logisticData,
 		responsive: true,
@@ -941,7 +945,7 @@ function generateCharts() {
 		}]
 	};
 
-	var chartInstanceSupport = new Chart(chartSupport, {
+	chartInstanceSupport = new Chart(chartSupport, {
 		type: 'ShadowLineLightBlue',
 		data: supportData,
 		responsive: true,
@@ -985,7 +989,7 @@ function generateCharts() {
 		}]
 	};
 
-	var chartInstanceDocument = new Chart(chartDocument, {
+	chartInstanceDocument = new Chart(chartDocument, {
 		type: 'ShadowLineDarkGreen',
 		data: documentData,
 		responsive: true,
@@ -1029,7 +1033,7 @@ function generateCharts() {
 		}]
 	};
 
-	var chartInstanceCooperation = new Chart(chartCooperation, {
+	chartInstanceCooperation = new Chart(chartCooperation, {
 		type: 'ShadowLineDarkBlue',
 		data: cooperationData,
 		responsive: true,

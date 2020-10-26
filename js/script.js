@@ -9,6 +9,20 @@ jQuery(function ($) {
                 $('.dropdown-user').fadeIn(300)
             }
         });
+        
+        $(document).click(function(event) { 
+            var $target = $(event.target);
+            if(!$target.closest('.show-user-dropdown').length && 
+            $('.dropdown-user').is(':visible')){
+                $('.dropdown-user').fadeOut(300)
+            }        
+            if($( window ).width() < 769){
+                if((!$target.closest('.toggle-sidebar').length && !$target.closest('.sidebar').length) && 
+                $('.content').hasClass('full-width')){
+                    $('.toggle-sidebar').click()
+                }  
+            }
+        });
         $('.dropdown-level').click( function(){
             if($(this).parents('li').hasClass('active')){
                 $(this).parents('li').removeClass('active');

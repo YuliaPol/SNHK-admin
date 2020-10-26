@@ -977,6 +977,8 @@ body {
   }
   .doughnutchart {
     padding: 0px;
+    max-width: 250px;
+    margin: auto;
   }
   .charts-content .chart-row .chart-box .chart-block .chart {
     max-width: 100%;
