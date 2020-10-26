@@ -317,7 +317,7 @@ var optionsTeam = {
 				innerHtml += '</thead><tbody>';
 				bodyLines.forEach(function(body, i) {
 					var index = tooltipModel.dataPoints[0].index;
-					innerHtml +='<tr><td><div style="background-image:url(./../img/tooltip-bg1.svg); background-repeat: no-repeat; background-size: contain; background-position: center;">';
+					innerHtml +='<tr><td><div style="background-image:url(./img/tooltip-bg1.svg); background-repeat: no-repeat; background-size: contain; background-position: center;">';
 					innerHtml += '<div style="padding: 10px  6px 15px; font-size: 12px; line-height: 14px; color: #ffffff;">' + teamDataCountPerc[index] +'% / ' + teamDataCount[index] + 'шт</div></td></tr></div>';
 				});
 				innerHtml += '</tbody>';
@@ -437,7 +437,7 @@ var optionsLogistic = {
 				innerHtml += '</thead><tbody>';
 				bodyLines.forEach(function(body, i) {
 					var index = tooltipModel.dataPoints[0].index;
-					innerHtml +='<tr><td><div style="background-image:url(./../img/tooltip-bg2.svg); background-repeat: no-repeat; background-size: contain; background-position: center;">';
+					innerHtml +='<tr><td><div style="background-image:url(./img/tooltip-bg2.svg); background-repeat: no-repeat; background-size: contain; background-position: center;">';
 					innerHtml += '<div style="padding: 10px  6px 15px; font-size: 12px; line-height: 14px; color: #ffffff;">' + logisticDataCountPerc[index] +'% / ' + logisticDataCount[index] + 'шт</div></td></tr></div>';
 				});
 				innerHtml += '</tbody>';
@@ -559,7 +559,7 @@ var optionsSupport = {
 				innerHtml += '</thead><tbody>';
 				bodyLines.forEach(function(body, i) {
 					var index = tooltipModel.dataPoints[0].index;
-					innerHtml +='<tr><td><div style="background-image:url(./../img/tooltip-bg3.svg); background-repeat: no-repeat; background-size: contain; background-position: center;">';
+					innerHtml +='<tr><td><div style="background-image:url(./img/tooltip-bg3.svg); background-repeat: no-repeat; background-size: contain; background-position: center;">';
 					innerHtml += '<div style="padding: 10px  6px 15px; font-size: 12px; line-height: 14px; color: #ffffff;">' + supportDataCountPerc[index] +'% / ' + supportDataCount[index] + 'шт</div></td></tr></div>';
 				});
 				innerHtml += '</tbody>';
@@ -681,7 +681,7 @@ var optionsDocument = {
 				innerHtml += '</thead><tbody>';
 				bodyLines.forEach(function(body, i) {
 					var index = tooltipModel.dataPoints[0].index;
-					innerHtml +='<tr><td><div style="background-image:url(./../img/tooltip-bg4.svg); background-repeat: no-repeat; background-size: contain; background-position: center;">';
+					innerHtml +='<tr><td><div style="background-image:url(./img/tooltip-bg4.svg); background-repeat: no-repeat; background-size: contain; background-position: center;">';
 					innerHtml += '<div style="padding: 10px  6px 15px; font-size: 12px; line-height: 14px; color: #ffffff;">' + documentDataCountPerc[index] +'% / ' + documentDataCount[index] + 'шт</div></td></tr></div>';
 				});
 				innerHtml += '</tbody>';
@@ -802,7 +802,7 @@ var optionsCooperation = {
 				innerHtml += '</thead><tbody>';
 				bodyLines.forEach(function(body, i) {
 					var index = tooltipModel.dataPoints[0].index;
-					innerHtml +='<tr><td><div style="background-image:url(./../img/tooltip-bg5.svg); background-repeat: no-repeat; background-size: contain; background-position: center;">';
+					innerHtml +='<tr><td><div style="background-image:url(./img/tooltip-bg5.svg); background-repeat: no-repeat; background-size: contain; background-position: center;">';
 					innerHtml += '<div style="padding: 10px  6px 15px; font-size: 12px; line-height: 14px; color: #ffffff;">' + cooperationDataCountPerc[index] +'% / ' + cooperationDataCount[index] + 'шт</div></td></tr></div>';
 				});
 				innerHtml += '</tbody>';
