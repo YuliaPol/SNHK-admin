@@ -250,9 +250,10 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
                         background-repeat: no-repeat;
                         background-size: contain;
                         background-position: center;
-                        width: 10px;
-                        height: 10px;
+                        width: 15px;
+                        height: 15px;
                         display: inline-block;
+                        margin-right: 5px;
                     }
                     a {
                         display: inline-block;
@@ -263,8 +264,8 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
                         font-family: $fontpage;
                         font-style: normal;
                         font-weight: normal;
-                        font-size: 14px;
-                        line-height: 16px;
+                        font-size: 16px;
+                        line-height: 18px;
                         text-align: center;
                         color: #565252;
                         text-decoration: none;
@@ -325,8 +326,8 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
             font-family: $fontpage;
             font-style: normal;
             font-weight: normal;
-            font-size: 12px;
-            line-height: 14px;
+            font-size: 16px;
+            line-height: 18px;
             color: #797777;
             margin-bottom: 2px !important;
             border-bottom: 1px solid #BEBEBE;
@@ -341,8 +342,8 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
             font-family: $fontpage;
             font-style: normal;
             font-weight: normal;
-            font-size: 12px;
-            line-height: 14px;
+            font-size: 16px;
+            line-height: 18px;
             color: #383232;
             outline: none;
             box-shadow: none;
@@ -409,16 +410,17 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
             font-family: $fontpage;
             font-style: normal;
             font-weight: normal;
-            font-size: 14px;
-            line-height: 16px;
+            font-size: 16px;
+            line-height: 18px;
             text-align: center;
             color: #000000;
-            a {
+            a,
+            span {
                 font-family: $fontpage;
                 font-style: normal;
                 font-weight: normal;
-                font-size: 14px;
-                line-height: 16px;
+                font-size: 16px;
+                line-height: 18px;
                 text-align: center;
                 color: #000000;
                 text-decoration: none;
@@ -709,8 +711,6 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
     .filter-wrapper .box {
         width: calc(33% - 20px);
     }
-}
-@media screen and (max-width: 900px) {
     .chart-box.full-width .linechart {
         &.minwidth800 {
             overflow: auto;
@@ -735,6 +735,8 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
             }
         }
     }
+}
+@media screen and (max-width: 900px) {
     .chart-box.full-width .linechart {
         &.minwidth850 {
             overflow: auto;
@@ -763,6 +765,43 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
     .charts-content .chart-row .chart-box .chart-block .chart {
         max-width: 100%;
         width: 100%;
+    }
+    .chart-box.full-width .linechart {
+        &.minwidth600 {
+            overflow: auto;
+            & > div {
+                min-width: 600px;
+            }
+        }
+    }
+}
+.scrollup {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #61A743;
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    text-decoration: none;
+    border-radius: 20px 0px;
+    transition: all 0.50s ease;
+    box-shadow: 5px 5px 22px -4px rgba(0, 0, 0, 0.75);
+    cursor: pointer;
+    z-index: 999;
+    display: none;
+    text-align: center;
+    .text-white {
+        width: 25px;
+        height: 25px;
+        background: url(./../img/arrow-down.svg);
+        transform: rotate(180deg);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: contain;
+        position: absolute;
+        top: calc(50% - 12px);
+        left: calc(50% - 12px);
     }
 }
 @media screen and (max-width: 768px) {
@@ -798,14 +837,6 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
             overflow: auto;
             & > div {
                 min-width: 300px;
-            }
-        }
-    }
-    .chart-box.full-width .linechart {
-        &.minwidth600 {
-            overflow: auto;
-            & > div {
-                min-width: 600px;
             }
         }
     }

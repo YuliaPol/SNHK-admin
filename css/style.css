@@ -334,9 +334,10 @@ body {
   -webkit-background-size: contain;
           background-size: contain;
   background-position: center;
-  width: 10px;
-  height: 10px;
+  width: 15px;
+  height: 15px;
   display: inline-block;
+  margin-right: 5px;
 }
 
 .container .sidebar .menu .sidebar-nav li a {
@@ -348,8 +349,8 @@ body {
   font-family: "FreeSetCTT";
   font-style: normal;
   font-weight: normal;
-  font-size: 14px;
-  line-height: 16px;
+  font-size: 16px;
+  line-height: 18px;
   text-align: center;
   color: #565252;
   text-decoration: none;
@@ -434,8 +435,8 @@ body {
   font-family: "FreeSetCTT";
   font-style: normal;
   font-weight: normal;
-  font-size: 12px;
-  line-height: 14px;
+  font-size: 16px;
+  line-height: 18px;
   color: #797777;
   margin-bottom: 2px !important;
   border-bottom: 1px solid #BEBEBE;
@@ -451,8 +452,8 @@ body {
   font-family: "FreeSetCTT";
   font-style: normal;
   font-weight: normal;
-  font-size: 12px;
-  line-height: 14px;
+  font-size: 16px;
+  line-height: 18px;
   color: #383232;
   outline: none;
   -webkit-box-shadow: none;
@@ -546,18 +547,19 @@ body {
   font-family: "FreeSetCTT";
   font-style: normal;
   font-weight: normal;
-  font-size: 14px;
-  line-height: 16px;
+  font-size: 16px;
+  line-height: 18px;
   text-align: center;
   color: #000000;
 }
 
-.breadcrumps ul li a {
+.breadcrumps ul li a,
+.breadcrumps ul li span {
   font-family: "FreeSetCTT";
   font-style: normal;
   font-weight: normal;
-  font-size: 14px;
-  line-height: 16px;
+  font-size: 16px;
+  line-height: 18px;
   text-align: center;
   color: #000000;
   text-decoration: none;
@@ -955,9 +957,6 @@ body {
   .filter-wrapper .box {
     width: calc(33% - 20px);
   }
-}
-
-@media screen and (max-width: 900px) {
   .chart-box.full-width .linechart.minwidth800 {
     overflow: auto;
   }
@@ -976,6 +975,9 @@ body {
   .chart-box.full-width .linechart.minwidth950 > div {
     min-width: 950px;
   }
+}
+
+@media screen and (max-width: 900px) {
   .chart-box.full-width .linechart.minwidth850 {
     overflow: auto;
   }
@@ -1007,6 +1009,50 @@ body {
     max-width: 100%;
     width: 100%;
   }
+  .chart-box.full-width .linechart.minwidth600 {
+    overflow: auto;
+  }
+  .chart-box.full-width .linechart.minwidth600 > div {
+    min-width: 600px;
+  }
+}
+
+.scrollup {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #61A743;
+  width: 50px;
+  height: 50px;
+  line-height: 50px;
+  text-decoration: none;
+  border-radius: 20px 0px;
+  -webkit-transition: all 0.50s ease;
+  -o-transition: all 0.50s ease;
+  transition: all 0.50s ease;
+  -webkit-box-shadow: 5px 5px 22px -4px rgba(0, 0, 0, 0.75);
+          box-shadow: 5px 5px 22px -4px rgba(0, 0, 0, 0.75);
+  cursor: pointer;
+  z-index: 999;
+  display: none;
+  text-align: center;
+}
+
+.scrollup .text-white {
+  width: 25px;
+  height: 25px;
+  background: url(./../img/arrow-down.svg);
+  -webkit-transform: rotate(180deg);
+      -ms-transform: rotate(180deg);
+       -o-transform: rotate(180deg);
+          transform: rotate(180deg);
+  background-position: center;
+  background-repeat: no-repeat;
+  -webkit-background-size: contain;
+          background-size: contain;
+  position: absolute;
+  top: calc(50% - 12px);
+  left: calc(50% - 12px);
 }
 
 @media screen and (max-width: 768px) {
@@ -1042,12 +1088,6 @@ body {
   }
   .chart-box .linechart.minwidth300 > div {
     min-width: 300px;
-  }
-  .chart-box.full-width .linechart.minwidth600 {
-    overflow: auto;
-  }
-  .chart-box.full-width .linechart.minwidth600 > div {
-    min-width: 600px;
   }
 }
 
