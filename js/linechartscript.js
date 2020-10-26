@@ -869,7 +869,7 @@ function generateCharts() {
 				var image = new Image();
 				image.src = images[index];
 				var imageline = new Image();
-				imageline.src = './../img/line.svg';
+				imageline.src = './img/line.svg';
 				ctx.drawImage(image, 0,  y - 15);
 				ctx.drawImage(imageline, 0,  y);
 			  });      
@@ -913,7 +913,7 @@ function generateCharts() {
 				var image = new Image();
 				image.src = images[index];
 				var imageline = new Image();
-				imageline.src = './../img/line.svg';
+				imageline.src = './img/line.svg';
 				ctx.drawImage(image, 0,  y - 15);
 				ctx.drawImage(imageline, 0,  y);
 			  });      
@@ -958,7 +958,7 @@ function generateCharts() {
 				var image = new Image();
 				image.src = images[index];
 				var imageline = new Image();
-				imageline.src = './../img/line.svg';
+				imageline.src = './img/line.svg';
 				ctx.drawImage(image, 0,  y - 15);
 				ctx.drawImage(imageline, 0,  y);
 			  });      
@@ -1002,7 +1002,7 @@ function generateCharts() {
 				var image = new Image();
 				image.src = images[index];
 				var imageline = new Image();
-				imageline.src = './../img/line.svg';
+				imageline.src = './img/line.svg';
 				ctx.drawImage(image, 0,  y - 15);
 				ctx.drawImage(imageline, 0,  y);
 			  });      
@@ -1046,7 +1046,7 @@ function generateCharts() {
 				var image = new Image();
 				image.src = images[index];
 				var imageline = new Image();
-				imageline.src = './../img/line.svg';
+				imageline.src = './img/line.svg';
 				ctx.drawImage(image, 0,  y - 15);
 				ctx.drawImage(imageline, 0,  y);
 			  });      
