@@ -1081,13 +1081,95 @@ ul.pagination {
     border-left: 5px solid transparent;
     border-top: 6px solid rgba(0,0,0,.7);
     line-height: 0;
-  }
+}
+.infoclient {
+    background: #FFFFFF;
+    .infoclientrow {
+        display: flex;
+        align-items: stretch;
+        justify-content: flex-start;
+        padding: 0px 25px;
+        .infoclientcol {
+            width: 75%;
+            padding: 18px 0px;
+        }
+        .img-block {
+            width: 25%;
+            background: url(./../img/detailinfoclient.svg);
+            background-position-x: right;
+            background-position-y: 20px;
+            background-repeat: no-repeat;
+            background-size: contain;
+        }
+    }
+    .info-cnt-flex {
+        display: flex;
+        align-items: flex-start;
+        justify-content: flex-start;
+        & > div {
+            width: 50%;
+        }
+    }
+    .infoheader {
+        font-family: Arial;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 20px;
+        line-height: 23px;
+        text-transform: uppercase;
+        color: #000000;
+        padding-bottom: 40px;
+        text-align: center;
+    }
+    .info-row {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        padding-bottom: 15px;
+        max-width: 360px;
+        .label {
+            font-family: Arial;
+            font-style: normal;
+            font-weight: bold;
+            font-size: 16px;
+            line-height: 18px;
+            color: #000000;
+        }
+        .value {
+            font-family: Arial;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 16px;
+            line-height: 18px;
+            color: #605A5A;
+            width: 200px;
+            text-align: left;
+        }
+    }
+}
 @media screen and (max-width: 1400px) {
     .filter-wrapper .box {
         width: calc(25% - 20px);
     }
 }
 @media screen and (max-width: 1200px) {
+    .infoclient .info-row {
+        flex-direction: column;
+        width: 100%;
+        max-width: 100%;
+        .label {
+            padding-bottom: 15px;
+        }
+        .value {
+            width: auto;
+        }
+    }
+    .infoclient .infoclientrow .img-block {
+        width: 40%;
+    }
+    .infoclient .infoclientrow .infoclientcol {
+        width: 60%;
+    }
     .charts-content .chart-box .chart-block .chart {
         width: calc(100% - 20px);
     }
@@ -1120,6 +1202,25 @@ ul.pagination {
     }
 }
 @media screen and (max-width: 900px) {
+    .infoclient .info-row {
+        padding-bottom: 10px;
+    }
+    .infoclient .info-row .label {
+        padding-bottom: 5px;
+    }
+    .infoclient .info-cnt-flex {
+        flex-direction: column;
+    }
+    .infoclient .info-cnt-flex > div {
+        width: 100%;
+    }
+    .infoclient .infoclientrow .img-block {
+        width: 50%;
+        background-position: center;
+    }
+    .infoclient .infoclientrow .infoclientcol {
+        width: 50%;
+    }
     .table-content .table-wrapper table tbody tr td:first-child {
         padding-left: 50px;
     }
@@ -1246,6 +1347,34 @@ ul.pagination {
 }
 
 @media screen and (max-width: 500px) {
+    .breadcrumps {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    .breadcrumps ul li {
+        font-size: 12px;
+        a ,
+        span {
+            font-size: 12px;
+        }
+    }
+    .infoclient .infoclientrow {
+        flex-direction: column;
+        .infoclientcol {
+            width: 100%;
+        }
+        .img-block {
+            height: 300px;
+            width: 100%;
+        }
+        .info-cnt-flex {
+            flex-direction: row;
+        }
+    }
+    .infoclient .infoclientrow {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
     .doughnutchart {
         max-width: 200px;
     }
@@ -1283,6 +1412,9 @@ ul.pagination {
     }
 }
 @media screen and (max-width: 450px) {
+    .infoclient .infoclientrow .img-block {
+        height: 200px;
+    }
     .charts-content .chart-box .chart-block {
         flex-direction: column;
         .doughnutchart,
