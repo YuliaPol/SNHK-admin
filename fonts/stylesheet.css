@@ -1,7 +1,7 @@
 
 @font-face {
 	font-family: 'FreeSetCTT';
-	src: url('FreeSetCTT.ttf');
+	src: url(../fonts/FreeSetCTTRegular.ttf);
 	font-weight: 500;
 	font-style: normal;
 }

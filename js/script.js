@@ -40,6 +40,18 @@ jQuery(function ($) {
             $('.header').toggleClass('full-width');
             $('.content').toggleClass('full-width');
         });
+        $('.accordeon').on('click', '.accordeon-header', function(e){
+            if($(this).parents('.accordeon-block').hasClass('active')){
+                $(this).parents('.accordeon-block').removeClass('active');
+                $(this).parents('.accordeon-block').find('.accordeon-content').fadeOut(300);
+            }
+            else {
+                $('.accordeon').find('.accordeon-block').removeClass('active');
+                $('.accordeon').find('.accordeon-block .accordeon-content').fadeOut(300);
+                $(this).parents('.accordeon-block').addClass('active');
+                $(this).parents('.accordeon-block').find('.accordeon-content').fadeIn(300);
+            }
+        });
     });
     
     $(window).on('scroll', function () {
