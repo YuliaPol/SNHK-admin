@@ -1866,6 +1866,43 @@ ul.pagination .next a {
           background-size: contain;
 }
 
+.btn-wrapper {
+  padding-top: 15px;
+  padding-bottom: 25px;
+  padding-left: 25px;
+  padding-right: 25px;
+}
+
+.btn-default {
+  padding: 10px 20px;
+  font-family: Arial;
+  font-style: normal;
+  font-size: 16px;
+  line-height: 18px;
+  color: #FFFFFF;
+  background: #61A743;
+  border-radius: 5px;
+  border: none;
+  text-decoration: none;
+}
+
+.btn-back {
+  padding-left: 10px;
+}
+
+.btn-back::before {
+  content: "";
+  background: url(./../img/back-arrow.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  -webkit-background-size: contain;
+          background-size: contain;
+  height: 14px;
+  width: 20px;
+  display: inline-block;
+  margin-right: 3px;
+}
+
 @media screen and (max-width: 1400px) {
   .filter-wrapper .box {
     width: calc(25% - 20px);
@@ -2066,6 +2103,11 @@ ul.pagination .next a {
 }
 
 @media screen and (max-width: 500px) {
+  .btn-wrapper {
+    padding-left: 15px;
+    padding-right: 15px;
+    font-size: 14px;
+  }
   .accordeon {
     padding-left: 10px;
     padding-right: 10px;
