@@ -1,4 +1,10 @@
-@import url(../fonts/stylesheet.css);
+@font-face {
+  font-family: 'FreeSetCTT';
+  font-weight: 500;
+  font-style: normal;
+  src: local("FreeSetCTT"), url(../fonts/FreeSetCTT.ttf) format("truetype");
+}
+
 * {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -427,7 +433,7 @@ body {
 }
 
 .container .sidebar .menu .sidebar-nav li a.active .icon-charts {
-  background: url(./../img/icicon-charts.svg);
+  background: url(./../img/icon-charts.svg);
   background-repeat: no-repeat;
   -webkit-background-size: contain;
           background-size: contain;

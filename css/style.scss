@@ -2,9 +2,14 @@ $fontcolor: #505050;
 $backgroundpage: #F4F4F4;
 $fontpage: 'FreeSetCTT';
 $widthsidebar: 260px;
-@import url(../fonts/stylesheet.css);
 
-
+@font-face {
+    font-family: 'FreeSetCTT';
+	// src: url("../fonts/FreeSetCTT.ttf");
+	font-weight: 500;
+    font-style: normal;
+    src: local('FreeSetCTT'), url(../fonts/FreeSetCTT.ttf) format('truetype');
+}
 // style
 * {
     box-sizing: border-box;
@@ -316,7 +321,7 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
                         }
                         &.active {
                             .icon-charts {
-                                background: url(./../img/icicon-charts.svg);
+                                background: url(./../img/icon-charts.svg);
                                 background-repeat: no-repeat;
                                 background-size: contain;
                                 background-position: center;
