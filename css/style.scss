@@ -271,6 +271,17 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
                         margin-right: 5px;
                         transition: background 0.3s ease-in;
                     }
+                    .icon-detail {
+                        background: url(./../img/icon-detail-g.svg);
+                        background-repeat: no-repeat;
+                        background-size: contain;
+                        background-position: center;
+                        width: 15px;
+                        height: 15px;
+                        display: inline-block;
+                        margin-right: 5px;
+                        transition: background 0.3s ease-in;
+                    }
                     a {
                         display: inline-block;
                         padding-top: 10px;
@@ -282,7 +293,7 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
                         font-weight: normal;
                         font-size: 16px;
                         line-height: 18px;
-                        text-align: center;
+                        text-align: left;
                         color: #565252;
                         text-decoration: none;
                         outline: none;
@@ -311,6 +322,12 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
                             }
                             .icon-info {
                                 background: url(./../img/icon-info.svg);
+                                background-repeat: no-repeat;
+                                background-size: contain;
+                                background-position: center;
+                            }
+                            .icon-detail {
+                                background: url(./../img/icon-detail.svg);
                                 background-repeat: no-repeat;
                                 background-size: contain;
                                 background-position: center;
@@ -1179,6 +1196,9 @@ ul.pagination {
         position: absolute;
         top: calc(50% - 12px);
         left: calc(50% - 12px);
+        .fa {
+            display: none;
+        }
     }
 }
 .block-header {
@@ -1446,6 +1466,196 @@ ul.pagination {
         margin-right: 3px;
     }
 }
+body .mainContent-wrp #header-fix > nav .wrp-h  {
+    background: #ffffff !important;
+    box-shadow: none !important;
+}
+body .mainContent-wrp #header-fix > nav {
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2) !important;
+}
+body .mainContent-wrp #content .container-fluid .nav-title {
+    box-shadow: none;
+}
+body .mainContent-wrp #header-fix > nav .wrp-h .navbar-header.px-3.pt-4.mr-lg-4.crystal-brd-right #sidebarCollapse .navbar-toggler-icon {
+    background-color: #61A743;
+}
+body .mainContent-wrp #sidebar .sidebar-nav ul#menu li.active,
+body .mainContent-wrp #sidebar .sidebar-nav ul#menu > li:hover {
+    background: #ffffff !important;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+body .mainContent-wrp #sidebar {
+    .sidebar-nav {
+        padding-top: 35px;
+    }
+    li {
+        width: 100%;
+        padding: 0px;
+        margin: 0px;
+        transition: background 0.3s ease;
+        margin: 0px !important;
+        .icon-charts {
+            background: url(./../img/icon-charts-g.svg);
+            background-repeat: no-repeat;
+            background-size: contain;
+            background-position: center;
+            width: 15px;
+            height: 15px;
+            display: inline-block;
+            margin-right: 5px;
+            transition: background 0.3s ease-in;
+        }
+        .icon-info {
+            background: url(./../img/icon-info-g.svg);
+            background-repeat: no-repeat;
+            background-size: contain;
+            background-position: center;
+            width: 15px;
+            height: 15px;
+            display: inline-block;
+            margin-right: 5px;
+            transition: background 0.3s ease-in;
+        }
+        .icon-detail {
+            background: url(./../img/icon-detail-g.svg);
+            background-repeat: no-repeat;
+            background-size: contain;
+            background-position: center;
+            width: 15px;
+            height: 15px;
+            display: inline-block;
+            margin-right: 5px;
+            transition: background 0.3s ease-in;
+        }
+        a {
+            display: inline-block;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            padding-left: 10px;
+            padding-right: 10px;
+            font-family: $fontpage;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 16px;
+            line-height: 18px;
+            text-align: left;
+            color: #565252;
+            text-decoration: none;
+            outline: none;
+            position: relative;
+            width: 100%;
+            position: relative;
+            &::after {
+                content: "";
+                position: absolute;
+                top: 0px;
+                bottom: 0px;
+                right: 0px;
+                width: 4px;
+                background: linear-gradient(180deg, #D2E507 0%, #85C723 100%);
+                border-radius: 1px;
+                opacity: 0;
+                transition: opacity 0.3s ease-in;
+            }
+            &:hover {
+                box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+                background: #ffffff;
+                .icon-charts {
+                    background: url(./../img/icon-charts.svg);
+                    background-repeat: no-repeat;
+                    background-size: contain;
+                    background-position: center;
+                }
+                .icon-info {
+                    background: url(./../img/icon-info.svg);
+                    background-repeat: no-repeat;
+                    background-size: contain;
+                    background-position: center;
+                }
+                .icon-detail {
+                    background: url(./../img/icon-detail.svg);
+                    background-repeat: no-repeat;
+                    background-size: contain;
+                    background-position: center;
+                }
+                &::after {
+                    opacity: 1;
+                }
+            }
+        }
+        &.active {
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            background: #ffffff;
+            .icon-charts {
+                background: url(./../img/icon-charts.svg);
+                background-repeat: no-repeat;
+                background-size: contain;
+                background-position: center;
+            }
+            .icon-info {
+                background: url(./../img/icon-info.svg);
+                background-repeat: no-repeat;
+                background-size: contain;
+                background-position: center;
+            }
+            a::after {
+                opacity: 1;
+            }
+        }
+    }
+}
+.filters form {
+    justify-content: flex-start;
+}
+.btns-info {
+    padding: 0px;
+}
+.btns-info .container-ii .show-block {
+    margin: 0px;
+    min-width: auto;
+    max-width: initial;
+    width: 100%;
+}
+.daterangepicker.dropdown-menu {
+    width: auto;
+}
+.applyBtn.btn.btn-sm.btn-success {
+    padding: 10px 20px;
+    font-family: Arial;
+    font-style: normal;
+    font-size: 16px;
+    line-height: 18px;
+    color: #FFFFFF;
+    background: #61A743;
+    border-radius: 5px;
+    border: none;
+    text-decoration: none;
+}
+td.active {
+    background: #61A743 !important;
+}
+.daterangepicker .calendar-table th, .daterangepicker .calendar-table td {
+    vertical-align: middle;
+    text-align: center;
+}
+body .mainContent-wrp #header-fix > nav > a {
+    border-right: 1px solid #61A743;
+}
+.range_inputs {
+    display: flex;
+    flex-direction: row;
+    .applyBtn.btn.btn-sm.btn-success {
+        padding: 10px;
+        margin: 0px;
+        margin-right: 10px;
+    }
+    .btn-default {
+        padding: 10px;
+    }
+}
+
 @media screen and (max-width: 1400px) {
     .filter-wrapper .box {
         width: calc(25% - 20px);

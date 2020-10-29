@@ -364,6 +364,21 @@ body {
   transition: background 0.3s ease-in;
 }
 
+.container .sidebar .menu .sidebar-nav li .icon-detail {
+  background: url(./../img/icon-detail-g.svg);
+  background-repeat: no-repeat;
+  -webkit-background-size: contain;
+          background-size: contain;
+  background-position: center;
+  width: 15px;
+  height: 15px;
+  display: inline-block;
+  margin-right: 5px;
+  -webkit-transition: background 0.3s ease-in;
+  -o-transition: background 0.3s ease-in;
+  transition: background 0.3s ease-in;
+}
+
 .container .sidebar .menu .sidebar-nav li a {
   display: inline-block;
   padding-top: 10px;
@@ -375,7 +390,7 @@ body {
   font-weight: normal;
   font-size: 16px;
   line-height: 18px;
-  text-align: center;
+  text-align: left;
   color: #565252;
   text-decoration: none;
   outline: none;
@@ -417,6 +432,14 @@ body {
 
 .container .sidebar .menu .sidebar-nav li a:hover .icon-info {
   background: url(./../img/icon-info.svg);
+  background-repeat: no-repeat;
+  -webkit-background-size: contain;
+          background-size: contain;
+  background-position: center;
+}
+
+.container .sidebar .menu .sidebar-nav li a:hover .icon-detail {
+  background: url(./../img/icon-detail.svg);
   background-repeat: no-repeat;
   -webkit-background-size: contain;
           background-size: contain;
@@ -1592,6 +1615,10 @@ ul.pagination .next a {
   left: calc(50% - 12px);
 }
 
+.scrollup .text-white .fa {
+  display: none;
+}
+
 .block-header {
   font-family: Arial;
   font-style: normal;
@@ -1901,6 +1928,261 @@ ul.pagination .next a {
   width: 20px;
   display: inline-block;
   margin-right: 3px;
+}
+
+body .mainContent-wrp #header-fix > nav .wrp-h {
+  background: #ffffff !important;
+  -webkit-box-shadow: none !important;
+          box-shadow: none !important;
+}
+
+body .mainContent-wrp #header-fix > nav {
+  -webkit-box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2) !important;
+          box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2) !important;
+}
+
+body .mainContent-wrp #content .container-fluid .nav-title {
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+body .mainContent-wrp #header-fix > nav .wrp-h .navbar-header.px-3.pt-4.mr-lg-4.crystal-brd-right #sidebarCollapse .navbar-toggler-icon {
+  background-color: #61A743;
+}
+
+body .mainContent-wrp #sidebar .sidebar-nav ul#menu li.active,
+body .mainContent-wrp #sidebar .sidebar-nav ul#menu > li:hover {
+  background: #ffffff !important;
+  -webkit-box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+          box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+body .mainContent-wrp #sidebar .sidebar-nav {
+  padding-top: 35px;
+}
+
+body .mainContent-wrp #sidebar li {
+  width: 100%;
+  padding: 0px;
+  margin: 0px;
+  -webkit-transition: background 0.3s ease;
+  -o-transition: background 0.3s ease;
+  transition: background 0.3s ease;
+  margin: 0px !important;
+}
+
+body .mainContent-wrp #sidebar li .icon-charts {
+  background: url(./../img/icon-charts-g.svg);
+  background-repeat: no-repeat;
+  -webkit-background-size: contain;
+          background-size: contain;
+  background-position: center;
+  width: 15px;
+  height: 15px;
+  display: inline-block;
+  margin-right: 5px;
+  -webkit-transition: background 0.3s ease-in;
+  -o-transition: background 0.3s ease-in;
+  transition: background 0.3s ease-in;
+}
+
+body .mainContent-wrp #sidebar li .icon-info {
+  background: url(./../img/icon-info-g.svg);
+  background-repeat: no-repeat;
+  -webkit-background-size: contain;
+          background-size: contain;
+  background-position: center;
+  width: 15px;
+  height: 15px;
+  display: inline-block;
+  margin-right: 5px;
+  -webkit-transition: background 0.3s ease-in;
+  -o-transition: background 0.3s ease-in;
+  transition: background 0.3s ease-in;
+}
+
+body .mainContent-wrp #sidebar li .icon-detail {
+  background: url(./../img/icon-detail-g.svg);
+  background-repeat: no-repeat;
+  -webkit-background-size: contain;
+          background-size: contain;
+  background-position: center;
+  width: 15px;
+  height: 15px;
+  display: inline-block;
+  margin-right: 5px;
+  -webkit-transition: background 0.3s ease-in;
+  -o-transition: background 0.3s ease-in;
+  transition: background 0.3s ease-in;
+}
+
+body .mainContent-wrp #sidebar li a {
+  display: inline-block;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+  font-family: "FreeSetCTT";
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 18px;
+  text-align: left;
+  color: #565252;
+  text-decoration: none;
+  outline: none;
+  position: relative;
+  width: 100%;
+  position: relative;
+}
+
+body .mainContent-wrp #sidebar li a::after {
+  content: "";
+  position: absolute;
+  top: 0px;
+  bottom: 0px;
+  right: 0px;
+  width: 4px;
+  background: -webkit-gradient(linear, left top, left bottom, from(#D2E507), to(#85C723));
+  background: -webkit-linear-gradient(top, #D2E507 0%, #85C723 100%);
+  background: -o-linear-gradient(top, #D2E507 0%, #85C723 100%);
+  background: linear-gradient(180deg, #D2E507 0%, #85C723 100%);
+  border-radius: 1px;
+  opacity: 0;
+  -webkit-transition: opacity 0.3s ease-in;
+  -o-transition: opacity 0.3s ease-in;
+  transition: opacity 0.3s ease-in;
+}
+
+body .mainContent-wrp #sidebar li a:hover {
+  -webkit-box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+          box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  background: #ffffff;
+}
+
+body .mainContent-wrp #sidebar li a:hover .icon-charts {
+  background: url(./../img/icon-charts.svg);
+  background-repeat: no-repeat;
+  -webkit-background-size: contain;
+          background-size: contain;
+  background-position: center;
+}
+
+body .mainContent-wrp #sidebar li a:hover .icon-info {
+  background: url(./../img/icon-info.svg);
+  background-repeat: no-repeat;
+  -webkit-background-size: contain;
+          background-size: contain;
+  background-position: center;
+}
+
+body .mainContent-wrp #sidebar li a:hover .icon-detail {
+  background: url(./../img/icon-detail.svg);
+  background-repeat: no-repeat;
+  -webkit-background-size: contain;
+          background-size: contain;
+  background-position: center;
+}
+
+body .mainContent-wrp #sidebar li a:hover::after {
+  opacity: 1;
+}
+
+body .mainContent-wrp #sidebar li.active {
+  -webkit-box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+          box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  background: #ffffff;
+}
+
+body .mainContent-wrp #sidebar li.active .icon-charts {
+  background: url(./../img/icon-charts.svg);
+  background-repeat: no-repeat;
+  -webkit-background-size: contain;
+          background-size: contain;
+  background-position: center;
+}
+
+body .mainContent-wrp #sidebar li.active .icon-info {
+  background: url(./../img/icon-info.svg);
+  background-repeat: no-repeat;
+  -webkit-background-size: contain;
+          background-size: contain;
+  background-position: center;
+}
+
+body .mainContent-wrp #sidebar li.active a::after {
+  opacity: 1;
+}
+
+.filters form {
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+}
+
+.btns-info {
+  padding: 0px;
+}
+
+.btns-info .container-ii .show-block {
+  margin: 0px;
+  min-width: auto;
+  max-width: initial;
+  width: 100%;
+}
+
+.daterangepicker.dropdown-menu {
+  width: auto;
+}
+
+.applyBtn.btn.btn-sm.btn-success {
+  padding: 10px 20px;
+  font-family: Arial;
+  font-style: normal;
+  font-size: 16px;
+  line-height: 18px;
+  color: #FFFFFF;
+  background: #61A743;
+  border-radius: 5px;
+  border: none;
+  text-decoration: none;
+}
+
+td.active {
+  background: #61A743 !important;
+}
+
+.daterangepicker .calendar-table th, .daterangepicker .calendar-table td {
+  vertical-align: middle;
+  text-align: center;
+}
+
+body .mainContent-wrp #header-fix > nav > a {
+  border-right: 1px solid #61A743;
+}
+
+.range_inputs {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.range_inputs .applyBtn.btn.btn-sm.btn-success {
+  padding: 10px;
+  margin: 0px;
+  margin-right: 10px;
+}
+
+.range_inputs .btn-default {
+  padding: 10px;
 }
 
 @media screen and (max-width: 1400px) {
