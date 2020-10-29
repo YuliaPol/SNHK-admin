@@ -1405,6 +1405,7 @@ ul.pagination .next a {
   width: 50%;
   padding-left: 20px;
   padding-right: 20px;
+  height: 250px;
 }
 
 .charts-content .chart-box .chart-block .chart {
@@ -1679,7 +1680,7 @@ ul.pagination .next a {
   content: "";
   width: 30px;
   height: 15px;
-  background: url(./../img/accordeon-arrow.svg);
+  background: url(./../img/accordeon-arrow.svg?56846546);
   background-position: center;
   background-repeat: no-repeat;
   -webkit-background-size: contain;
@@ -1931,7 +1932,7 @@ ul.pagination .next a {
 }
 
 body .mainContent-wrp #header-fix > nav .wrp-h {
-  background: #ffffff !important;
+  background: #61A743 !important;
   -webkit-box-shadow: none !important;
           box-shadow: none !important;
 }
@@ -1944,10 +1945,6 @@ body .mainContent-wrp #header-fix > nav {
 body .mainContent-wrp #content .container-fluid .nav-title {
   -webkit-box-shadow: none;
           box-shadow: none;
-}
-
-body .mainContent-wrp #header-fix > nav .wrp-h .navbar-header.px-3.pt-4.mr-lg-4.crystal-brd-right #sidebarCollapse .navbar-toggler-icon {
-  background-color: #61A743;
 }
 
 body .mainContent-wrp #sidebar .sidebar-nav ul#menu li.active,
@@ -2159,10 +2156,6 @@ td.active {
   text-align: center;
 }
 
-body .mainContent-wrp #header-fix > nav > a {
-  border-right: 1px solid #61A743;
-}
-
 .range_inputs {
   display: -webkit-box;
   display: -webkit-flex;
@@ -2185,13 +2178,28 @@ body .mainContent-wrp #header-fix > nav > a {
   padding: 10px;
 }
 
+.dropdown-menu {
+  left: 0;
+  right: auto;
+}
+
+.dropdown-menu .btn-default {
+  background: #ffffff;
+}
+
 @media screen and (max-width: 1400px) {
   .filter-wrapper .box {
     width: calc(25% - 20px);
   }
+  .charts-content .chart-box .chart-block .doughnutchart {
+    height: 200px;
+  }
 }
 
 @media screen and (max-width: 1200px) {
+  .charts-content .chart-box .chart-block .doughnutchart {
+    height: 150px;
+  }
   .infoclient .info-row {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -2240,6 +2248,9 @@ body .mainContent-wrp #header-fix > nav > a {
 }
 
 @media screen and (max-width: 900px) {
+  .charts-content .chart-box .chart-block .doughnutchart {
+    height: 180px;
+  }
   .accordeon .accordeon-block .accordeon-content .info-wrapper .info-row .first-col,
   .accordeon .accordeon-block .accordeon-content .info-wrapper .info-row .second-col .second-row .col {
     font-size: 14px;

@@ -16,7 +16,6 @@
       var width = $this.width();
       var height = $this.width();
       if($( document ).width() > 900){
-      console.log($( document ).width());
         height =  $this.width() + 50;
       }
       var W = width,
