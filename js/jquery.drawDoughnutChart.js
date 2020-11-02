@@ -148,17 +148,19 @@
       var $summaryNumber = $('<p class="' + settings.summaryNumberClass + '"></p>').appendTo($summary).css({opacity: 0});
 
       for (var i = 0, len = data.length; i < len; i++){
-        segmentTotal += data[i].value;
-        var p = document.createElementNS('http://www.w3.org/2000/svg', 'path');
-        p.setAttribute("stroke-width", settings.segmentStrokeWidth);
-        p.setAttribute("stroke", settings.segmentStrokeColor);
-        p.setAttribute("fill", data[i].color);
-        p.setAttribute("data-order", i);
-        $paths[i] = $(p).appendTo($pathGroup);
-        $paths[i]
-          .on("mouseenter", pathMouseEnter)
-          .on("mouseleave", pathMouseLeave)
-          .on("mousemove", pathMouseMove);
+        if( data[i].value) {
+          segmentTotal += data[i].value;
+          var p = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+          p.setAttribute("stroke-width", settings.segmentStrokeWidth);
+          p.setAttribute("stroke", settings.segmentStrokeColor);
+          p.setAttribute("fill", data[i].color);
+          p.setAttribute("data-order", i);
+          $paths[i] = $(p).appendTo($pathGroup);
+          $paths[i]
+            .on("mouseenter", pathMouseEnter)
+            .on("mouseleave", pathMouseLeave)
+            .on("mousemove", pathMouseMove);
+        }
       }
 
 
@@ -194,7 +196,8 @@
 
         //draw each path
         for (var i = 0, len = data.length; i < len; i++){
-          var segmentAngle = rotateAnimation * ((data[i].value/segmentTotal) * (PI*2)),
+          if(data[i].value){
+            var segmentAngle = rotateAnimation * ((data[i].value/segmentTotal) * (PI*2)),
             endRadius = startRadius + segmentAngle,
             largeArc = ((endRadius - startRadius) % (PI * 2)) > PI ? 1 : 0,
             startX = centerX + cos(startRadius) * doughnutRadius,
@@ -214,6 +217,7 @@
           ];
           $paths[i][0].setAttribute("d",cmd.join(' '));
           startRadius += segmentAngle;
+          }
         }
       }
 

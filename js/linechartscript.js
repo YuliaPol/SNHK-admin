@@ -22,7 +22,7 @@ jQuery(function ($) {
 				}, 50);
 			})
 		});
-		const images = [' ', '/admin/snxk/img/star5.svg', '/admin/snxk/img/star5.svg', '/admin/snxk/img/star5.svg', '/admin/snxk/img/star5.svg', '/admin/snxk/img/star5.svg'];
+		const images = [' ', '/admin/snxk/img/star5.svg', '/admin/snxk/img/star4.svg', '/admin/snxk/img/star3.svg', '/admin/snxk/img/star2.svg', '/admin/snxk/img/star1.svg'];
 		(function()
 		{
 			var ShadowLineElement = Chart.elements.Line.extend({
@@ -317,7 +317,7 @@ jQuery(function ($) {
 						bodyLines.forEach(function(body, i) {
 							var index = tooltipModel.dataPoints[0].index;
 							innerHtml +='<tr><td><div style="background-image:url(/admin/snxk/img/tooltip-bg1.svg); background-repeat: no-repeat; background-size: contain; background-position: center;">';
-							innerHtml += '<div style="padding: 10px  6px 15px; font-size: 12px; line-height: 14px; color: #ffffff;">' + teamDataCountPerc[index] +'% / ' + teamDataCount[index] + 'шт</div></td></tr></div>';
+							innerHtml += '<div style="padding: 10px  6px 15px; font-size: 12px; line-height: 14px; color: #ffffff;width: 65px; text-align: center;">' + teamDataCount[index] + 'шт</div></td></tr></div>';
 						});
 						innerHtml += '</tbody>';
 						var tableRoot = tooltipEl.querySelector('table');
@@ -437,7 +437,7 @@ jQuery(function ($) {
 						bodyLines.forEach(function(body, i) {
 							var index = tooltipModel.dataPoints[0].index;
 							innerHtml +='<tr><td><div style="background-image:url(/admin/snxk/img/tooltip-bg2.svg); background-repeat: no-repeat; background-size: contain; background-position: center;">';
-							innerHtml += '<div style="padding: 10px  6px 15px; font-size: 12px; line-height: 14px; color: #ffffff;">' + logisticDataCountPerc[index] +'% / ' + logisticDataCount[index] + 'шт</div></td></tr></div>';
+							innerHtml += '<div style="padding: 10px  6px 15px; font-size: 12px; line-height: 14px; color: #ffffff;width: 65px; text-align: center;">' + logisticDataCount[index] + 'шт</div></td></tr></div>';
 						});
 						innerHtml += '</tbody>';
 						var tableRoot = tooltipEl.querySelector('table');
@@ -559,7 +559,7 @@ jQuery(function ($) {
 						bodyLines.forEach(function(body, i) {
 							var index = tooltipModel.dataPoints[0].index;
 							innerHtml +='<tr><td><div style="background-image:url(/admin/snxk/img/tooltip-bg3.svg); background-repeat: no-repeat; background-size: contain; background-position: center;">';
-							innerHtml += '<div style="padding: 10px  6px 15px; font-size: 12px; line-height: 14px; color: #ffffff;">' + supportDataCountPerc[index] +'% / ' + supportDataCount[index] + 'шт</div></td></tr></div>';
+							innerHtml += '<div style="padding: 10px  6px 15px; font-size: 12px; line-height: 14px; color: #ffffff;width: 65px; text-align: center;">' + supportDataCount[index] + 'шт</div></td></tr></div>';
 						});
 						innerHtml += '</tbody>';
 						var tableRoot = tooltipEl.querySelector('table');
@@ -681,7 +681,7 @@ jQuery(function ($) {
 						bodyLines.forEach(function(body, i) {
 							var index = tooltipModel.dataPoints[0].index;
 							innerHtml +='<tr><td><div style="background-image:url(/admin/snxk/img/tooltip-bg4.svg); background-repeat: no-repeat; background-size: contain; background-position: center;">';
-							innerHtml += '<div style="padding: 10px  6px 15px; font-size: 12px; line-height: 14px; color: #ffffff;">' + documentDataCountPerc[index] +'% / ' + documentDataCount[index] + 'шт</div></td></tr></div>';
+							innerHtml += '<div style="padding: 10px  6px 15px; font-size: 12px; line-height: 14px; color: #ffffff;width: 65px; text-align: center;">' + documentDataCount[index] + 'шт</div></td></tr></div>';
 						});
 						innerHtml += '</tbody>';
 						var tableRoot = tooltipEl.querySelector('table');
@@ -802,7 +802,7 @@ jQuery(function ($) {
 						bodyLines.forEach(function(body, i) {
 							var index = tooltipModel.dataPoints[0].index;
 							innerHtml +='<tr><td><div style="background-image:url(/admin/snxk/img/tooltip-bg5.svg); background-repeat: no-repeat; background-size: contain; background-position: center;">';
-							innerHtml += '<div style="padding: 10px  6px 15px; font-size: 12px; line-height: 14px; color: #ffffff;">' + cooperationDataCountPerc[index] +'% / ' + cooperationDataCount[index] + 'шт</div></td></tr></div>';
+							innerHtml += '<div style="padding: 10px  6px 15px; font-size: 12px; line-height: 14px; color: #ffffff;width: 65px; text-align: center;">' + cooperationDataCount[index] + 'шт</div></td></tr></div>';
 						});
 						innerHtml += '</tbody>';
 						var tableRoot = tooltipEl.querySelector('table');

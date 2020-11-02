@@ -19,7 +19,12 @@ jQuery(function ($) {
                 }
                 var index=0;
                 for (const element of data) {
-                    persent[index] = Math.round((100*element.value)/summary);
+                    if(element.value > 0) {
+                        persent[index] = Math.round((100*element.value)/summary);
+                    }
+                    else {
+                        persent[index] = 0;
+                    }
                     index ++;
                 }
                 index=0;
