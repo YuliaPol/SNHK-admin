@@ -864,7 +864,7 @@ jQuery(function ($) {
 						var image = new Image();
 						image.src = images[index];
 						var imageline = new Image();
-						imageline.src = '/admin/snxk/img/line.svg';
+						imageline.src = '/admin/snxk/img/line.svg?489847654';
 						ctx.drawImage(image, 0,  y - 15);
 						ctx.drawImage(imageline, 0,  y);
 					});      
@@ -908,7 +908,7 @@ jQuery(function ($) {
 						var image = new Image();
 						image.src = images[index];
 						var imageline = new Image();
-						imageline.src = '/admin/snxk/img/line.svg';
+						imageline.src = '/admin/snxk/img/line.svg?489847654';
 						ctx.drawImage(image, 0,  y - 15);
 						ctx.drawImage(imageline, 0,  y);
 					});      
@@ -953,7 +953,7 @@ jQuery(function ($) {
 						var image = new Image();
 						image.src = images[index];
 						var imageline = new Image();
-						imageline.src = '/admin/snxk/img/line.svg';
+						imageline.src = '/admin/snxk/img/line.svg?489847654';
 						ctx.drawImage(image, 0,  y - 15);
 						ctx.drawImage(imageline, 0,  y);
 					});      
@@ -997,7 +997,7 @@ jQuery(function ($) {
 						var image = new Image();
 						image.src = images[index];
 						var imageline = new Image();
-						imageline.src = '/admin/snxk/img/line.svg';
+						imageline.src = '/admin/snxk/img/line.svg?489847654';
 						ctx.drawImage(image, 0,  y - 15);
 						ctx.drawImage(imageline, 0,  y);
 					});      
@@ -1041,7 +1041,7 @@ jQuery(function ($) {
 						var image = new Image();
 						image.src = images[index];
 						var imageline = new Image();
-						imageline.src = '/admin/snxk/img/line.svg';
+						imageline.src = '/admin/snxk/img/line.svg?489847654';
 						ctx.drawImage(image, 0,  y - 15);
 						ctx.drawImage(imageline, 0,  y);
 					});      
