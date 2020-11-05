@@ -373,6 +373,17 @@
                             </div>
                         </div>
                     </div>
+                    <div class="chart-row">
+                        <div class="chart-box">
+                            <div class="chart-header">Какой % прибыли Ваша компания инвестирует на исследования и разработку новых продуктов?</div>
+                            <div class="chart-block">
+                                <div class="doughnutchart">
+                                    <div id="ReseachDoughnatChart" class="chart"></div>
+                                </div>
+                                <div class="doughnutlegend"></div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -390,6 +401,29 @@
     <script src="./js/linechartscript.js?8984185648854"></script>
     <script src="./js/doughnatscript.js"></script>
     <script>
+        //data for reseach chart
+        var dataReseach = [
+            {
+                title: "0%",
+                value: 10,
+                color: "#c5cb18"
+            },
+            {
+                title: "1-2%",
+                value: 12,
+                color: "#b2d869"
+            },
+            {
+                title: "2-5%",
+                value: 16,
+                color: "#8ac375"
+            },
+            {
+                title: "5-10%",
+                value: 30,
+                color: "#86d4aa"
+            }
+        ];
         //data for manufactory chart
         var dataManufactory = [
             {

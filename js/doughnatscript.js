@@ -10,6 +10,11 @@ jQuery(function ($) {
             SetDoughnatLegend(dataPlace, $("#PlaceDoughnatChart"));
         }
 
+        if(dataReseach && $('#ReseachDoughnatChart').length>0) {
+            $("#ReseachDoughnatChart").drawDoughnutChart(dataReseach);
+            SetDoughnatLegend(dataReseach, $("#ReseachDoughnatChart"));
+        }
+
         function SetDoughnatLegend(data, chart){
             if(data.length>0 && chart) {
                 var summary = 0;
