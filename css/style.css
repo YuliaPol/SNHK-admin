@@ -1428,15 +1428,6 @@ ul.pagination .next a {
   transform-box: fill-box;
 }
 
-.charts-content .chart-box .chart-block .chart path:hover {
-  -webkit-filter: url("#boxshadow");
-          filter: url("#boxshadow");
-  -webkit-transform: scale(1.01);
-      -ms-transform: scale(1.01);
-       -o-transform: scale(1.01);
-          transform: scale(1.01);
-}
-
 .doughnutTip {
   position: absolute;
   float: left;
@@ -2189,6 +2180,18 @@ td.active {
 
 .dropdown-menu .btn-default {
   background: #ffffff;
+}
+
+@supports not (-ms-high-contrast: none) {
+  /* Non-IE styles here */
+  .charts-content .chart-box .chart-block .chart path:hover {
+    -webkit-filter: url(#boxshadow);
+            filter: url(#boxshadow);
+    -webkit-transform: scale(1.01);
+        -ms-transform: scale(1.01);
+         -o-transform: scale(1.01);
+            transform: scale(1.01);
+  }
 }
 
 @media screen and (max-width: 1400px) {

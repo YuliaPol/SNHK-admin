@@ -1064,10 +1064,6 @@ ul.pagination {
                 path {
                     transform-origin: center center;
                     transform-box: fill-box;
-                    &:hover {
-                        filter: url('#boxshadow');
-                        transform: scale(1.01);
-                    }
                 }
               }
         }
@@ -1659,6 +1655,13 @@ td.active {
     right: auto;
     .btn-default {
         background: #ffffff;
+    }
+}
+@supports not (-ms-high-contrast: none) {
+    /* Non-IE styles here */
+    .charts-content .chart-box .chart-block .chart path:hover {
+        filter: url(#boxshadow);
+        transform: scale(1.01);
     }
 }
 @media screen and (max-width: 1400px) {

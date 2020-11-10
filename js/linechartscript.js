@@ -2,7 +2,7 @@
 // As of Chart.js v2.5.0
 // http://www.chartjs.org/docs
 // ============================================
-
+"use strict";
 var realDW = $(document).width(), // @int --> real document width
 chartInstanceTeam,
 chartInstanceLogistic,
@@ -253,7 +253,17 @@ jQuery(function ($) {
 						max: 6,
 						stepSize: 1,
 						callback: function(value, index, values) {
-							return '               ';
+							if (window.document.documentMode) {
+								if(value == 6){
+									return ' ';
+								}
+								else {
+									return '    ' + value + '    ';
+								}
+							}
+							else {
+								return '               ';
+							}
 						}
 					}
 				}],
@@ -314,11 +324,11 @@ jQuery(function ($) {
 						var bodyLines = tooltipModel.body.map(getBody);	
 						var innerHtml = '<thead>';
 						innerHtml += '</thead><tbody>';
-						bodyLines.forEach(function(body, i) {
+						for (var i = 0; i < bodyLines.length; i++) {
 							var index = tooltipModel.dataPoints[0].index;
 							innerHtml +='<tr><td><div style="background-image:url(/admin/snxk/img/tooltip-bg1.svg); background-repeat: no-repeat; background-size: contain; background-position: center;">';
 							innerHtml += '<div style="padding: 10px  6px 15px; font-size: 12px; line-height: 14px; color: #ffffff;width: 65px; text-align: center;">' + teamDataCount[index] + 'шт</div></td></tr></div>';
-						});
+						}
 						innerHtml += '</tbody>';
 						var tableRoot = tooltipEl.querySelector('table');
 						tableRoot.innerHTML = innerHtml;
@@ -372,7 +382,17 @@ jQuery(function ($) {
 						max: 6,
 						stepSize: 1,
 						callback: function(value, index, values) {
-							return '               ';
+							if (window.document.documentMode) {
+								if(value == 6){
+									return ' ';
+								}
+								else {
+									return '    ' + value + '    ';
+								}
+							}
+							else {
+								return '               ';
+							}
 						}
 					}
 				}],
@@ -434,11 +454,11 @@ jQuery(function ($) {
 
 						var innerHtml = '<thead>';
 						innerHtml += '</thead><tbody>';
-						bodyLines.forEach(function(body, i) {
+						for (var i = 0; i < bodyLines.length; i++) {
 							var index = tooltipModel.dataPoints[0].index;
 							innerHtml +='<tr><td><div style="background-image:url(/admin/snxk/img/tooltip-bg2.svg); background-repeat: no-repeat; background-size: contain; background-position: center;">';
 							innerHtml += '<div style="padding: 10px  6px 15px; font-size: 12px; line-height: 14px; color: #ffffff;width: 65px; text-align: center;">' + logisticDataCount[index] + 'шт</div></td></tr></div>';
-						});
+						}
 						innerHtml += '</tbody>';
 						var tableRoot = tooltipEl.querySelector('table');
 						tableRoot.innerHTML = innerHtml;
@@ -494,7 +514,17 @@ jQuery(function ($) {
 						max: 6,
 						stepSize: 1,
 						callback: function(value, index, values) {
-							return '               ';
+							if (window.document.documentMode) {
+								if(value == 6){
+									return ' ';
+								}
+								else {
+									return '    ' + value + '    ';
+								}
+							}
+							else {
+								return '               ';
+							}
 						}
 					}
 				}],
@@ -556,11 +586,11 @@ jQuery(function ($) {
 
 						var innerHtml = '<thead>';
 						innerHtml += '</thead><tbody>';
-						bodyLines.forEach(function(body, i) {
+						for (var i = 0; i < bodyLines.length; i++) {
 							var index = tooltipModel.dataPoints[0].index;
 							innerHtml +='<tr><td><div style="background-image:url(/admin/snxk/img/tooltip-bg3.svg); background-repeat: no-repeat; background-size: contain; background-position: center;">';
 							innerHtml += '<div style="padding: 10px  6px 15px; font-size: 12px; line-height: 14px; color: #ffffff;width: 65px; text-align: center;">' + supportDataCount[index] + 'шт</div></td></tr></div>';
-						});
+						}
 						innerHtml += '</tbody>';
 						var tableRoot = tooltipEl.querySelector('table');
 						tableRoot.innerHTML = innerHtml;
@@ -616,7 +646,17 @@ jQuery(function ($) {
 						max: 6,
 						stepSize: 1,
 						callback: function(value, index, values) {
-							return '               ';
+							if (window.document.documentMode) {
+								if(value == 6){
+									return ' ';
+								}
+								else {
+									return '    ' + value + '    ';
+								}
+							}
+							else {
+								return '               ';
+							}
 						}
 					}
 				}],
@@ -678,11 +718,11 @@ jQuery(function ($) {
 
 						var innerHtml = '<thead>';
 						innerHtml += '</thead><tbody>';
-						bodyLines.forEach(function(body, i) {
+						for (var i = 0; i < bodyLines.length; i++) {
 							var index = tooltipModel.dataPoints[0].index;
 							innerHtml +='<tr><td><div style="background-image:url(/admin/snxk/img/tooltip-bg4.svg); background-repeat: no-repeat; background-size: contain; background-position: center;">';
 							innerHtml += '<div style="padding: 10px  6px 15px; font-size: 12px; line-height: 14px; color: #ffffff;width: 65px; text-align: center;">' + documentDataCount[index] + 'шт</div></td></tr></div>';
-						});
+						}
 						innerHtml += '</tbody>';
 						var tableRoot = tooltipEl.querySelector('table');
 						tableRoot.innerHTML = innerHtml;
@@ -737,7 +777,17 @@ jQuery(function ($) {
 						max: 6,
 						stepSize: 1,
 						callback: function(value, index, values) {
-							return '               ';
+							if (window.document.documentMode) {
+								if(value == 6){
+									return ' ';
+								}
+								else {
+									return '    ' + value + '    ';
+								}
+							}
+							else {
+								return '               ';
+							}
 						}
 					}
 				}],
@@ -799,11 +849,11 @@ jQuery(function ($) {
 
 						var innerHtml = '<thead>';
 						innerHtml += '</thead><tbody>';
-						bodyLines.forEach(function(body, i) {
+						for (var i = 0; i < bodyLines.length; i++) {
 							var index = tooltipModel.dataPoints[0].index;
 							innerHtml +='<tr><td><div style="background-image:url(/admin/snxk/img/tooltip-bg5.svg); background-repeat: no-repeat; background-size: contain; background-position: center;">';
 							innerHtml += '<div style="padding: 10px  6px 15px; font-size: 12px; line-height: 14px; color: #ffffff;width: 65px; text-align: center;">' + cooperationDataCount[index] + 'шт</div></td></tr></div>';
-						});
+						}
 						innerHtml += '</tbody>';
 						var tableRoot = tooltipEl.querySelector('table');
 						tableRoot.innerHTML = innerHtml;
@@ -856,18 +906,26 @@ jQuery(function ($) {
 				data: teamData,
 				responsive: true,
 				plugins: [{
-					afterDraw: chartTeam => {      
+					afterDraw: function(chartTeam){      
 					var ctx = chartTeam.chart.ctx; 
 					var yAxis = chartTeam.scales['y-axis-0'];
-					yAxis.ticks.forEach((data, index) => {  
+					for (var index = 0; index < yAxis.ticks.length; index++) {
 						var y = yAxis.getPixelForTick(index);  
 						var image = new Image();
 						image.src = images[index];
 						var imageline = new Image();
-						imageline.src = '/admin/snxk/img/line.svg?489847654';
-						ctx.drawImage(image, 0,  y - 15);
-						ctx.drawImage(imageline, 0,  y);
-					});      
+						imageline.src = '/admin/snxk/img/line.svg?6549846135498465';
+						if (!window.document.documentMode) {
+							ctx.drawImage(image, 0,  y - 15);
+							ctx.beginPath();
+							ctx.moveTo(0,  y + 0.5);
+							ctx.lineTo(yAxis.right,  y + 0.5);
+							ctx.lineWidth = 1;
+							ctx.strokeStyle = "#D5D3D3";
+							ctx.stroke();
+							// ctx.drawImage(imageline, 0,  y);
+						}
+						}
 					}
 				}],
 				options: optionsTeam
@@ -900,18 +958,26 @@ jQuery(function ($) {
 				data: logisticData,
 				responsive: true,
 				plugins: [{
-					afterDraw: chartLogistic => {      
-					var ctx = chartLogistic.chart.ctx; 
-					var yAxis = chartLogistic.scales['y-axis-0'];
-					yAxis.ticks.forEach((data, index) => {  
-						var y = yAxis.getPixelForTick(index);  
-						var image = new Image();
-						image.src = images[index];
-						var imageline = new Image();
-						imageline.src = '/admin/snxk/img/line.svg?489847654';
-						ctx.drawImage(image, 0,  y - 15);
-						ctx.drawImage(imageline, 0,  y);
-					});      
+					afterDraw: function(chartLogistic){      
+						var ctx = chartLogistic.chart.ctx; 
+						var yAxis = chartLogistic.scales['y-axis-0'];
+						for (var index = 0; index < yAxis.ticks.length; index++) {
+							var y = yAxis.getPixelForTick(index);  
+							var image = new Image();
+							image.src = images[index];
+							var imageline = new Image();
+							imageline.src = '/admin/snxk/img/line.svg?6549846135498465';
+							if (!window.document.documentMode) {
+								ctx.drawImage(image, 0,  y - 15);
+								ctx.beginPath();
+								ctx.moveTo(0,  y + 0.5);
+								ctx.lineTo(yAxis.right,  y + 0.5);
+								ctx.lineWidth = 1;
+								ctx.strokeStyle = "#D5D3D3";
+								ctx.stroke();
+								// ctx.drawImage(imageline, 0,  y);
+							}
+						}
 					}
 				}],
 				options: optionsLogistic
@@ -945,18 +1011,26 @@ jQuery(function ($) {
 				data: supportData,
 				responsive: true,
 				plugins: [{
-					afterDraw: chartSupport => {      
-					var ctx = chartSupport.chart.ctx; 
-					var yAxis = chartSupport.scales['y-axis-0'];
-					yAxis.ticks.forEach((data, index) => {  
-						var y = yAxis.getPixelForTick(index);  
-						var image = new Image();
-						image.src = images[index];
-						var imageline = new Image();
-						imageline.src = '/admin/snxk/img/line.svg?489847654';
-						ctx.drawImage(image, 0,  y - 15);
-						ctx.drawImage(imageline, 0,  y);
-					});      
+					afterDraw: function(chartSupport){      
+						var ctx = chartSupport.chart.ctx; 
+						var yAxis = chartSupport.scales['y-axis-0'];
+						for (var index = 0; index < yAxis.ticks.length; index++) {
+							var y = yAxis.getPixelForTick(index);  
+							var image = new Image();
+							image.src = images[index];
+							var imageline = new Image();
+							imageline.src = '/admin/snxk/img/line.svg?6549846135498465';
+							if (!window.document.documentMode) {
+								ctx.drawImage(image, 0,  y - 15);
+								ctx.beginPath();
+								ctx.moveTo(0,  y + 0.5);
+								ctx.lineTo(yAxis.right,  y + 0.5);
+								ctx.lineWidth = 1;
+								ctx.strokeStyle = "#D5D3D3";
+								ctx.stroke();
+								// ctx.drawImage(imageline, 0,  y);
+							}
+						}
 					}
 				}],
 				options: optionsSupport
@@ -989,18 +1063,27 @@ jQuery(function ($) {
 				data: documentData,
 				responsive: true,
 				plugins: [{
-					afterDraw: chartDocument => {      
-					var ctx = chartDocument.chart.ctx; 
-					var yAxis = chartDocument.scales['y-axis-0'];
-					yAxis.ticks.forEach((data, index) => {  
-						var y = yAxis.getPixelForTick(index);  
-						var image = new Image();
-						image.src = images[index];
-						var imageline = new Image();
-						imageline.src = '/admin/snxk/img/line.svg?489847654';
-						ctx.drawImage(image, 0,  y - 15);
-						ctx.drawImage(imageline, 0,  y);
-					});      
+					afterDraw: function(chartDocument){      
+						var ctx = chartDocument.chart.ctx; 
+						var yAxis = chartDocument.scales['y-axis-0'];
+						for (var index = 0; index < yAxis.ticks.length; index++) {
+							var y = yAxis.getPixelForTick(index);  
+							console.log(yAxis);
+							var image = new Image();
+							image.src = images[index];
+							var imageline = new Image();
+							imageline.src = '/admin/snxk/img/line.svg?6549846135498465';
+							if (!window.document.documentMode) {
+								ctx.drawImage(image, 0,  y - 15);
+								ctx.beginPath();
+								ctx.moveTo(0,  y + 0.5);
+								ctx.lineTo(yAxis.right,  y + 0.5);
+								ctx.lineWidth = 1;
+								ctx.strokeStyle = "#D5D3D3";
+								ctx.stroke();
+								// ctx.drawImage(imageline, 0,  y);
+							}
+						}
 					}
 				}],
 				options: optionsDocument
@@ -1033,18 +1116,26 @@ jQuery(function ($) {
 				data: cooperationData,
 				responsive: true,
 				plugins: [{
-					afterDraw: chartCooperation => {      
-					var ctx = chartCooperation.chart.ctx; 
-					var yAxis = chartCooperation.scales['y-axis-0'];
-					yAxis.ticks.forEach((data, index) => {  
-						var y = yAxis.getPixelForTick(index);  
-						var image = new Image();
-						image.src = images[index];
-						var imageline = new Image();
-						imageline.src = '/admin/snxk/img/line.svg?489847654';
-						ctx.drawImage(image, 0,  y - 15);
-						ctx.drawImage(imageline, 0,  y);
-					});      
+					afterDraw: function(chartCooperation){      
+						var ctx = chartCooperation.chart.ctx; 
+						var yAxis = chartCooperation.scales['y-axis-0'];
+						for (var index = 0; index < yAxis.ticks.length; index++) {
+							var y = yAxis.getPixelForTick(index);  
+							var image = new Image();
+							image.src = images[index];
+							var imageline = new Image();
+							imageline.src = '/admin/snxk/img/line.svg?6549846135498465';
+							if (!window.document.documentMode) {
+								ctx.drawImage(image, 0,  y - 15);
+								ctx.beginPath();
+								ctx.moveTo(0,  y + 0.5);
+								ctx.lineTo(yAxis.right,  y + 0.5);
+								ctx.lineWidth = 1;
+								ctx.strokeStyle = "#D5D3D3";
+								ctx.stroke();
+								// ctx.drawImage(imageline, 0,  y);
+							}
+						}
 					}
 				}],
 				options: optionsCooperation
@@ -1077,14 +1168,12 @@ jQuery(function ($) {
 				$('#documentsChart'),
 				$('#cooperationsChart'),
 			];
-
-			chartArr.forEach(function (item) {
-				var id = $(item).attr('id');
-				var parent = $(item).parent();
-				$(item).remove();
+			for (var i = 0; i < chartArr.length; i++) {
+				var id = $(chartArr[i]).attr('id');
+				var parent = $(chartArr[i]).parent();
+				$(chartArr[i]).remove();
 				$(parent).append('<canvas id="' + id + '"><canvas>');
-			});
-
+			}
 			// set width and height
 			setSize();
 			// generate chart

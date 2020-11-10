@@ -19,13 +19,13 @@ jQuery(function ($) {
             if(data.length>0 && chart) {
                 var summary = 0;
                 var persent = new Array(data.length);
-                for (const element of data) {
-                    summary = summary + element.value;
+                for (var i = 0; i < data.length; i++) {
+                    summary = summary + data[i].value;
                 }
                 var index=0;
-                for (const element of data) {
-                    if(element.value > 0) {
-                        persent[index] = Math.round((100*element.value)/summary);
+                for (var i = 0; i < data.length; i++) {
+                    if(data[i].value > 0) {
+                        persent[index] = Math.round((100*data[i].value)/summary);
                     }
                     else {
                         persent[index] = 0;
@@ -33,11 +33,11 @@ jQuery(function ($) {
                     index ++;
                 }
                 index=0;
-                for (const element of data) {
+                for (var i = 0; i < data.length; i++) {
                     var legenditem = 
                     '<div class="legenditem">'
-                    +'    <div class="count" style="background: '+ element.color +';">'+ persent[index] + '% / '+ element.value + ' шт</div>'
-                    +'   <div class="label">'+ element.title + '</div>'
+                    +'    <div class="count" style="background: '+ data[i].color +';">'+ persent[index] + '% / '+ data[i].value + ' шт</div>'
+                    +'   <div class="label">'+ data[i].title + '</div>'
                     +'</div>';
                     chart.parents('.chart-block').find('.doughnutlegend').append(legenditem);
                     index ++;
