@@ -1253,7 +1253,7 @@ ul.pagination {
                 background-size: contain;
                 position: absolute;
                 right: 30px;
-                top: 17px;
+                top: calc(50% - 6px);;
                 transition: transform 0.3s ease-in;
             }
             &:hover {

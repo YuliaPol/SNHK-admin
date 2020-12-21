@@ -1682,7 +1682,7 @@ ul.pagination .next a {
           background-size: contain;
   position: absolute;
   right: 30px;
-  top: 17px;
+  top: calc(50% - 6px);
   -webkit-transition: -webkit-transform 0.3s ease-in;
   transition: -webkit-transform 0.3s ease-in;
   -o-transition: -o-transform 0.3s ease-in;

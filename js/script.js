@@ -47,9 +47,14 @@ jQuery(function ($) {
             }
             else {
                 $('.accordeon').find('.accordeon-block').removeClass('active');
-                $('.accordeon').find('.accordeon-block .accordeon-content').fadeOut(300);
+                $('.accordeon').find('.accordeon-block .accordeon-content').fadeOut(0);
                 $(this).parents('.accordeon-block').addClass('active');
                 $(this).parents('.accordeon-block').find('.accordeon-content').fadeIn(300);
+                var topScroll =  $(this).parents('.accordeon-block').find('.accordeon-content').offset().top - 150;
+                $('html, body').animate({
+                    scrollTop: topScroll
+                  }, 800);
+                // $(this).parents('.accordeon-block').find('.accordeon-content')[0].scrollIntoView({block: "start", behavior: "smooth"});
             }
         });
     });
