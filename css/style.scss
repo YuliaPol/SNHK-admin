@@ -1012,6 +1012,10 @@ ul.pagination {
             .linechart {
                 max-width: 100%;
                 width: 100%;
+                overflow: auto;
+                & > div {
+                    min-width: 350px;
+                }
             }
             .doughnutlegend {
                 width: 50%;
@@ -1172,8 +1176,8 @@ ul.pagination {
 }
 .scrollup {
     position: fixed;
-    bottom: 20px;
-    right: 20px;
+    bottom: 10px;
+    right: 10px;
     background: #61A743;
     width: 50px;
     height: 50px;
@@ -1219,6 +1223,7 @@ ul.pagination {
 .accordeon {
     padding: 30px 20px 10px;
     background: #ffffff;
+    padding-bottom: 50px;
     .accordeon-block {
         padding-bottom: 20px;
         &.active {
@@ -1466,6 +1471,10 @@ ul.pagination {
         display: inline-block;
         margin-right: 3px;
     }
+}
+body #content {
+    max-width: 100%;
+    overflow: hidden;
 }
 body .mainContent-wrp #header-fix > nav .wrp-h  {
     background: #61A743 !important;

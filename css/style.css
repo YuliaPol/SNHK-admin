@@ -1353,6 +1353,11 @@ ul.pagination .next a {
 .charts-content .chart-box .chart-block .linechart {
   max-width: 100%;
   width: 100%;
+  overflow: auto;
+}
+
+.charts-content .chart-box .chart-block .linechart > div {
+  min-width: 350px;
 }
 
 .charts-content .chart-box .chart-block .doughnutlegend {
@@ -1575,8 +1580,8 @@ ul.pagination .next a {
 
 .scrollup {
   position: fixed;
-  bottom: 20px;
-  right: 20px;
+  bottom: 10px;
+  right: 10px;
   background: #61A743;
   width: 50px;
   height: 50px;
@@ -1633,6 +1638,7 @@ ul.pagination .next a {
 .accordeon {
   padding: 30px 20px 10px;
   background: #ffffff;
+  padding-bottom: 50px;
 }
 
 .accordeon .accordeon-block {
@@ -1924,6 +1930,11 @@ ul.pagination .next a {
   width: 20px;
   display: inline-block;
   margin-right: 3px;
+}
+
+body #content {
+  max-width: 100%;
+  overflow: hidden;
 }
 
 body .mainContent-wrp #header-fix > nav .wrp-h {

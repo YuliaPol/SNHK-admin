@@ -470,6 +470,10 @@
 
         //data for logistic chart
         var logisticDataLabels = [[['Качество'], ['подвижного состава']], [['Качество маркировки (нанесение'], [' знаков опасности, трафаретов)']]];
+
+        if (window.innerWidth < 767) {
+            var logisticDataLabels = [[['Качество'], ['подвижного состава']], [['Качество маркировки '], [' (нанесение знаков'], [' опасности, трафаретов)']]];
+        }
         var logisticDataRatings = [5, 3.2];
         //for tooltips
         var logisticDataCount = [40, 20];
